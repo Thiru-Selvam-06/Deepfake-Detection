@@ -1,0 +1,9 @@
+flask
+gunicorn
+torch
+torchvision
+opencv-python
+face-recognition
+numpy
+Pillow
+scikit-image
