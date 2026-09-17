@@ -305,7 +305,7 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
 
         with gr.Column(scale=1):
             output_card = gr.HTML(label="Analysis Result", value="<div style='color: #6b7280; padding: 20px; text-align: center;'>Upload an image and click <b>Analyze Image</b> to begin.</div>")
-            output_probs = gr.Label(label="Class Probability Distribution", num_top_classes=2)
+            output_probs = gr.JSON(label="Class Probability Distribution")
             status_output = gr.Textbox(label="Processing Status", interactive=False, max_lines=1)
 
     with gr.Accordion("ℹ️ Model Architecture & Citation Details", open=False):
