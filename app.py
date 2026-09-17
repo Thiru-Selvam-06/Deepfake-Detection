@@ -147,6 +147,8 @@ def run_inference(image):
         if next(model.parameters()).device != active_device:
             model.to(active_device)
 
+        orig_w, orig_h = img_rgb.size
+
         # Apply exact preprocessing: Resize(224) -> CenterCrop(224) -> ToTensor -> Normalize
         input_tensor = preprocess(img_rgb).unsqueeze(0).to(active_device)
 
@@ -203,6 +205,18 @@ def run_inference(image):
         <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px;">
             <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 12px; color: #111827;">Inference Metrics & Diagnostics</div>
             <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; color: #374151;">
+                <tr>
+                    <td style="padding: 6px 0; font-weight: 500;">Model Architecture:</td>
+                    <td style="padding: 6px 0; text-align: right; font-family: monospace;">CLIP:ViT-L/14</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 0; font-weight: 500;">Classifier Checkpoint:</td>
+                    <td style="padding: 6px 0; text-align: right; font-family: monospace;">fc_weights.pth</td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px 0; font-weight: 500;">Preprocessing Resolution:</td>
+                    <td style="padding: 6px 0; text-align: right; font-family: monospace;">224 × 224 (Input: {orig_w} × {orig_h})</td>
+                </tr>
                 <tr>
                     <td style="padding: 6px 0; font-weight: 500;">Predicted Class:</td>
                     <td style="padding: 6px 0; text-align: right; font-weight: 600; color: {badge_color};">{label}</td>
