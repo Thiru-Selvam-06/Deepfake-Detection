@@ -124,11 +124,16 @@ def run_inference(image):
     try:
         start_time = time.perf_counter()
 
+        # Dynamically use CUDA if available (e.g. inside @spaces.GPU) or fallback to CPU
+        active_device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        if next(model.parameters()).device != active_device:
+            model.to(active_device)
+
         # Convert image to RGB
         img_rgb = image.convert("RGB")
 
         # Apply exact preprocessing: Resize(224) -> CenterCrop(224) -> ToTensor -> Normalize
-        input_tensor = preprocess(img_rgb).unsqueeze(0).to(device)
+        input_tensor = preprocess(img_rgb).unsqueeze(0).to(active_device)
 
         # Single-image forward pass
         with torch.inference_mode():
@@ -205,7 +210,7 @@ def run_inference(image):
                 </tr>
                 <tr>
                     <td style="padding: 6px 0; font-weight: 500;">Processing Device:</td>
-                    <td style="padding: 6px 0; text-align: right; font-weight: 500;">{str(device).upper()}</td>
+                    <td style="padding: 6px 0; text-align: right; font-weight: 500;">{str(active_device).upper()}</td>
                 </tr>
                 <tr>
                     <td style="padding: 6px 0; font-weight: 500;">Inference Latency:</td>
@@ -224,7 +229,7 @@ def run_inference(image):
             "Fake": round(prob_fake, 4)
         }
 
-        status_str = f"Completed successfully on {str(device).upper()} in {latency_ms:.1f} ms."
+        status_str = f"Completed successfully on {str(active_device).upper()} in {latency_ms:.1f} ms."
         return result_html, prob_breakdown, status_str
 
     except Exception as e:
@@ -251,13 +256,19 @@ custom_css = """
     padding: 14px 18px;
     border-radius: 8px;
     font-size: 0.92rem;
-    margin-top: 16px;
     margin-bottom: 20px;
     line-height: 1.5;
 }
 """
 
-with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis") as demo:
+# Apply ZeroGPU decorator if available
+if SPACES_AVAILABLE:
+    try:
+        run_inference = spaces.GPU(duration=60)(run_inference)
+    except Exception as dec_err:
+        print(f"[UniversalFakeDetect] spaces.GPU decorator error: {dec_err}")
+
+with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_css) as demo:
     gr.Markdown(
         """
         # 🔬 UniversalFakeDetect: AI-Generated Image Detector
@@ -320,12 +331,4 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis") as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7860, ssr_mode=False, css=custom_css)
-    try:
-        demo.block_till_done()
-    except (KeyboardInterrupt, SystemExit):
-        pass
-    except Exception as e:
-        print(f"[UniversalFakeDetect] Keep-alive notice: {e}")
-    while True:
-        time.sleep(3600)
+    demo.launch()
