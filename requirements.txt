@@ -8,3 +8,5 @@ regex
 packaging
 setuptools<70
 psutil
+transformers
+safetensors

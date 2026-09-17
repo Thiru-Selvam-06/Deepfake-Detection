@@ -1,0 +1,14 @@
+[
+  {
+    "adapter": "UnivFDAdapter",
+    "contract_status": "COMPLIANT",
+    "schema_verified": true,
+    "error_handling_verified": true
+  },
+  {
+    "adapter": "ViTAdapter",
+    "contract_status": "COMPLIANT",
+    "schema_verified": true,
+    "error_handling_verified": true
+  }
+]
