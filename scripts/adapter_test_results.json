@@ -1,0 +1,122 @@
+[
+  {
+    "test_id": 1,
+    "name": "Known real photograph (smartphone capture)",
+    "category": "VALID_REAL_IMAGE",
+    "ground_truth_label": "REAL",
+    "expected_outcome": "SUCCESSFUL_INFERENCE",
+    "operational_status": "SUCCESSFUL_INFERENCE",
+    "domain_assessment": "ACCORDANT (Prediction matches ground truth label)",
+    "result": {
+      "detector_name": "UniversalFakeDetect",
+      "model_name": "CLIP:ViT-L/14 + fc_weights.pth",
+      "prediction": "REAL",
+      "fake_probability": 1.8e-05,
+      "real_probability": 0.999982,
+      "raw_logit": -10.932908,
+      "confidence": 0.999982,
+      "threshold": 0.5,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(clip)",
+      "inference_time_ms": 16069.53,
+      "error": null,
+      "warning": "Identifies learned patterns associated with synthetic or manipulated images. Does not guarantee image authenticity."
+    }
+  },
+  {
+    "test_id": 2,
+    "name": "Known AI-generated image (Google Imagen 3)",
+    "category": "VALID_AI_IMAGE",
+    "ground_truth_label": "FAKE",
+    "expected_outcome": "SUCCESSFUL_INFERENCE",
+    "operational_status": "SUCCESSFUL_INFERENCE",
+    "domain_assessment": "MODEL_LIMITATION_OBSERVED (Known ProGAN-trained classifier boundary: output REAL on FAKE input)",
+    "result": {
+      "detector_name": "UniversalFakeDetect",
+      "model_name": "CLIP:ViT-L/14 + fc_weights.pth",
+      "prediction": "REAL",
+      "fake_probability": 0.000828,
+      "real_probability": 0.999172,
+      "raw_logit": -7.096089,
+      "confidence": 0.999172,
+      "threshold": 0.5,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(clip)",
+      "inference_time_ms": 621.43,
+      "error": null,
+      "warning": "Identifies learned patterns associated with synthetic or manipulated images. Does not guarantee image authenticity."
+    }
+  },
+  {
+    "test_id": 3,
+    "name": "Known manipulated image (digital composite)",
+    "category": "VALID_MANIPULATED_IMAGE",
+    "ground_truth_label": "MANIPULATED",
+    "expected_outcome": "SUCCESSFUL_INFERENCE",
+    "operational_status": "SUCCESSFUL_INFERENCE",
+    "domain_assessment": "MODEL_LIMITATION_OBSERVED (Known ProGAN-trained classifier boundary: output REAL on MANIPULATED input)",
+    "result": {
+      "detector_name": "UniversalFakeDetect",
+      "model_name": "CLIP:ViT-L/14 + fc_weights.pth",
+      "prediction": "REAL",
+      "fake_probability": 0.006011,
+      "real_probability": 0.993989,
+      "raw_logit": -5.108142,
+      "confidence": 0.993989,
+      "threshold": 0.5,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(clip)",
+      "inference_time_ms": 633.63,
+      "error": null,
+      "warning": "Identifies learned patterns associated with synthetic or manipulated images. Does not guarantee image authenticity."
+    }
+  },
+  {
+    "test_id": 4,
+    "name": "Corrupted image file (truncated header)",
+    "category": "CORRUPTED_FILE",
+    "ground_truth_label": "CORRUPTED",
+    "expected_outcome": "INPUT_REJECTION",
+    "operational_status": "INPUT_REJECTION_VERIFIED",
+    "domain_assessment": "N/A (Input correctly rejected before model evaluation)",
+    "result": {
+      "detector_name": "UniversalFakeDetect",
+      "model_name": "CLIP:ViT-L/14 + fc_weights.pth",
+      "prediction": "ERROR",
+      "fake_probability": null,
+      "real_probability": null,
+      "raw_logit": null,
+      "confidence": null,
+      "threshold": null,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(clip)",
+      "inference_time_ms": null,
+      "error": "Invalid or corrupted image: cannot identify image file 'C:\\\\Users\\\\user\\\\.gemini\\\\antigravity-ide\\\\brain\\\\3b54ff09-c09f-4fe6-9276-f4cca9fbc6d7\\\\scratch\\\\corrupted_image.png'",
+      "warning": "Identifies learned patterns associated with synthetic or manipulated images. Does not guarantee image authenticity."
+    }
+  },
+  {
+    "test_id": 5,
+    "name": "Unsupported file format (plain text document)",
+    "category": "UNSUPPORTED_INPUT",
+    "ground_truth_label": "INVALID_TYPE",
+    "expected_outcome": "INPUT_REJECTION",
+    "operational_status": "INPUT_REJECTION_VERIFIED",
+    "domain_assessment": "N/A (Input correctly rejected before model evaluation)",
+    "result": {
+      "detector_name": "UniversalFakeDetect",
+      "model_name": "CLIP:ViT-L/14 + fc_weights.pth",
+      "prediction": "ERROR",
+      "fake_probability": null,
+      "real_probability": null,
+      "raw_logit": null,
+      "confidence": null,
+      "threshold": null,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(clip)",
+      "inference_time_ms": null,
+      "error": "Invalid or corrupted image: cannot identify image file 'C:\\\\Users\\\\user\\\\Desktop\\\\multi model connection\\\\scripts\\\\_temp_invalid.txt'",
+      "warning": "Identifies learned patterns associated with synthetic or manipulated images. Does not guarantee image authenticity."
+    }
+  }
+]
