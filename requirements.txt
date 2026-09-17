@@ -1,0 +1,9 @@
+torch
+torchvision
+pillow
+numpy
+tqdm
+ftfy
+regex
+setuptools
+psutil
