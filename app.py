@@ -97,7 +97,7 @@ def run_inference(image):
     if image is None:
         return (
             "<div style='background: #fef2f2; border: 1px solid #f87171; color: #991b1b; padding: 12px; border-radius: 8px; font-weight: 500;'>⚠️ No image provided. Please upload an image to analyze.</div>",
-            {},
+            "",
             "Awaiting image upload."
         )
 
@@ -108,7 +108,7 @@ def run_inference(image):
         except Exception as conv_err:
             return (
                 f"<div style='background: #fef2f2; border: 1px solid #f87171; color: #991b1b; padding: 12px; border-radius: 8px;'>❌ Unsupported image format: {str(conv_err)}</div>",
-                {},
+                "",
                 "Invalid input format."
             )
 
@@ -117,7 +117,7 @@ def run_inference(image):
     if model is None:
         return (
             f"<div style='background: #fef2f2; border: 1px solid #f87171; color: #991b1b; padding: 12px; border-radius: 8px;'>❌ Model failed to load: {LOAD_ERROR}</div>",
-            {},
+            "",
             "Model unavailable."
         )
 
@@ -224,20 +224,16 @@ def run_inference(image):
         </div>
         """
 
-        prob_breakdown = {
-            "Real": round(1.0 - prob_fake, 4),
-            "Fake": round(prob_fake, 4)
-        }
-
+        prob_str = f"Real: {(1.0 - prob_fake) * 100:.2f}%  |  Fake: {prob_fake * 100:.2f}%"
         status_str = f"Completed successfully on {str(active_device).upper()} in {latency_ms:.1f} ms."
-        return result_html, prob_breakdown, status_str
+        return result_html, prob_str, status_str
 
     except Exception as e:
         err_msg = f"Inference error: {str(e)}"
         print(f"[UniversalFakeDetect] {err_msg}")
         return (
             f"<div style='background: #fef2f2; border: 1px solid #f87171; color: #991b1b; padding: 12px; border-radius: 8px;'>❌ Error during analysis: {str(e)}</div>",
-            {},
+            "",
             err_msg
         )
 
@@ -305,7 +301,7 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
 
         with gr.Column(scale=1):
             output_card = gr.HTML(label="Analysis Result", value="<div style='color: #6b7280; padding: 20px; text-align: center;'>Upload an image and click <b>Analyze Image</b> to begin.</div>")
-            output_probs = gr.JSON(label="Class Probability Distribution")
+            output_probs = gr.Textbox(label="Class Probability Distribution", interactive=False, max_lines=1)
             status_output = gr.Textbox(label="Processing Status", interactive=False, max_lines=1)
 
     with gr.Accordion("ℹ️ Model Architecture & Citation Details", open=False):
@@ -328,7 +324,7 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
     def clear_fields():
         return (
             "<div style='color: #6b7280; padding: 20px; text-align: center;'>Upload an image and click <b>Analyze Image</b> to begin.</div>",
-            {},
+            "",
             "Ready."
         )
 
