@@ -6,6 +6,16 @@ from PIL import Image
 import torch
 import gradio as gr
 
+# Compatibility shim for Python 3.12+ environments where pkg_resources is deprecated/absent
+try:
+    import pkg_resources
+except ImportError:
+    import packaging
+    import types
+    _pr = types.ModuleType("pkg_resources")
+    _pr.packaging = packaging
+    sys.modules["pkg_resources"] = _pr
+
 # Ensure UniversalFakeDetect is in Python path
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UFD_DIR = os.path.join(BASE_DIR, "UniversalFakeDetect")
@@ -291,7 +301,7 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
 
     with gr.Accordion("ℹ️ Model Architecture & Citation Details", open=False):
         gr.Markdown(
-            """
+            r"""
             - **Model**: `UniversalFakeDetect` (CLIP:ViT-L/14 Backbone + Linear Classifier)
             - **Paper**: *Towards Universal Fake Image Detectors that Generalize Across Generative Models* (CVPR 2023)
             - **Authors**: Utkarsh Ojha*, Yuheng Li*, Yong Jae Lee (Wisconsin AI and Vision Lab)
