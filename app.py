@@ -320,4 +320,12 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis") as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch(ssr_mode=False, css=custom_css)
+    demo.launch(server_name="0.0.0.0", server_port=7860, ssr_mode=False, css=custom_css)
+    try:
+        demo.block_till_done()
+    except (KeyboardInterrupt, SystemExit):
+        pass
+    except Exception as e:
+        print(f"[UniversalFakeDetect] Keep-alive notice: {e}")
+    while True:
+        time.sleep(3600)
