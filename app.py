@@ -113,16 +113,22 @@ def run_inference(image):
             "Awaiting image upload."
         )
 
-    # Validate image format
-    if not isinstance(image, Image.Image):
-        try:
-            image = Image.fromarray(image)
-        except Exception as conv_err:
-            return (
-                f"<div style='background: #fef2f2; border: 1px solid #f87171; color: #991b1b; padding: 12px; border-radius: 8px;'>❌ Unsupported image format: {str(conv_err)}</div>",
-                "",
-                "Invalid input format."
-            )
+    # Safely load and validate image
+    try:
+        if isinstance(image, str):
+            with Image.open(image) as opened_img:
+                img_rgb = opened_img.convert("RGB")
+        elif isinstance(image, Image.Image):
+            img_rgb = image.convert("RGB")
+        else:
+            img_rgb = Image.fromarray(image).convert("RGB")
+    except Exception as img_err:
+        err_msg = f"Invalid or corrupted image file: {str(img_err)}"
+        return (
+            f"<div style='background: #fef2f2; border: 1.5px solid #f87171; color: #991b1b; padding: 16px; border-radius: 8px;'>❌ <b>Invalid or Corrupted Image:</b> {err_msg}</div>",
+            "",
+            f"Failed: {err_msg}"
+        )
 
     # 2. Ensure model is loaded
     model, device, preprocess = load_model()
@@ -140,9 +146,6 @@ def run_inference(image):
         active_device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         if next(model.parameters()).device != active_device:
             model.to(active_device)
-
-        # Convert image to RGB
-        img_rgb = image.convert("RGB")
 
         # Apply exact preprocessing: Resize(224) -> CenterCrop(224) -> ToTensor -> Normalize
         input_tensor = preprocess(img_rgb).unsqueeze(0).to(active_device)
@@ -297,7 +300,7 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
 
     with gr.Row():
         with gr.Column(scale=1):
-            input_image = gr.Image(type="pil", label="Upload Image for Analysis")
+            input_image = gr.Image(type="filepath", label="Upload Image for Analysis")
             with gr.Row():
                 analyze_btn = gr.Button("🔍 Analyze Image", variant="primary", scale=2)
                 clear_btn = gr.ClearButton(components=[input_image], scale=1)
@@ -349,4 +352,4 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
     )
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(show_error=True)
