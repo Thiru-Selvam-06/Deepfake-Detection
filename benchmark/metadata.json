@@ -1,0 +1,51 @@
+{
+  "benchmark_version": "1.0.0",
+  "description": "Standardized diagnostic benchmark metadata for deepfake detector evaluation in Multimodel_setup Space.",
+  "entries": [
+    {
+      "id": "real_001",
+      "filename": "real/real_phone_photo.png",
+      "category": "real",
+      "ground_truth": "UNKNOWN",
+      "source_claim": "Smartphone camera capture; ground-truth not independently verifiable within Space repository.",
+      "available": false,
+      "description": "High-resolution smartphone camera photograph test sample."
+    },
+    {
+      "id": "ai_001",
+      "filename": "ai_generated/ai_cyberpunk_city.jpg",
+      "category": "ai_generated",
+      "ground_truth": "UNKNOWN",
+      "source_claim": "Reported generated via Google Imagen 3 diffusion model; unverified inside Space repository.",
+      "available": false,
+      "description": "Photorealistic urban cityscape text-to-image diffusion sample."
+    },
+    {
+      "id": "manip_001",
+      "filename": "manipulated/manipulated_image.png",
+      "category": "manipulated",
+      "ground_truth": "UNKNOWN",
+      "source_claim": "Reported digital composite of photographic and synthetic elements; unverified inside Space repository.",
+      "available": false,
+      "description": "Composite digital manipulation test sample."
+    },
+    {
+      "id": "corr_001",
+      "filename": "corrupted/corrupted_image.png",
+      "category": "corrupted",
+      "ground_truth": "CORRUPTED",
+      "source_claim": "Malformed 20-byte file with invalid headers; intended for rejection verification.",
+      "available": false,
+      "description": "Truncated byte stream test sample."
+    },
+    {
+      "id": "unsupp_001",
+      "filename": "corrupted/unsupported_doc.txt",
+      "category": "corrupted",
+      "ground_truth": "UNSUPPORTED",
+      "source_claim": "Plain text document; intended for format rejection verification.",
+      "available": false,
+      "description": "Non-image document file."
+    }
+  ]
+}
