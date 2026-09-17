@@ -1,3 +1,10 @@
+# Hugging Face ZeroGPU requires spaces to be imported before any CUDA/torch modules
+try:
+    import spaces
+    SPACES_AVAILABLE = True
+except ImportError:
+    SPACES_AVAILABLE = False
+
 import os
 import sys
 import time
@@ -23,13 +30,6 @@ if UFD_DIR not in sys.path:
     sys.path.insert(0, UFD_DIR)
 
 from models import get_model
-
-# Check if Hugging Face spaces module is available (for ZeroGPU environments)
-try:
-    import spaces
-    SPACES_AVAILABLE = True
-except ImportError:
-    SPACES_AVAILABLE = False
 
 # Global model cache (loaded once at startup)
 MODEL = None
