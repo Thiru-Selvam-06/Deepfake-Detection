@@ -97,7 +97,7 @@ def run_inference(image):
     if image is None:
         return (
             "<div style='background: #fef2f2; border: 1px solid #f87171; color: #991b1b; padding: 12px; border-radius: 8px; font-weight: 500;'>⚠️ No image provided. Please upload an image to analyze.</div>",
-            None,
+            {},
             "Awaiting image upload."
         )
 
@@ -108,7 +108,7 @@ def run_inference(image):
         except Exception as conv_err:
             return (
                 f"<div style='background: #fef2f2; border: 1px solid #f87171; color: #991b1b; padding: 12px; border-radius: 8px;'>❌ Unsupported image format: {str(conv_err)}</div>",
-                None,
+                {},
                 "Invalid input format."
             )
 
@@ -117,7 +117,7 @@ def run_inference(image):
     if model is None:
         return (
             f"<div style='background: #fef2f2; border: 1px solid #f87171; color: #991b1b; padding: 12px; border-radius: 8px;'>❌ Model failed to load: {LOAD_ERROR}</div>",
-            None,
+            {},
             "Model unavailable."
         )
 
@@ -237,7 +237,7 @@ def run_inference(image):
         print(f"[UniversalFakeDetect] {err_msg}")
         return (
             f"<div style='background: #fef2f2; border: 1px solid #f87171; color: #991b1b; padding: 12px; border-radius: 8px;'>❌ Error during analysis: {str(e)}</div>",
-            None,
+            {},
             err_msg
         )
 
@@ -325,8 +325,16 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
         outputs=[output_card, output_probs, status_output]
     )
 
+    def clear_fields():
+        return (
+            "<div style='color: #6b7280; padding: 20px; text-align: center;'>Upload an image and click <b>Analyze Image</b> to begin.</div>",
+            {},
+            "Ready."
+        )
+
     clear_btn.click(
-        lambda: ("<div style='color: #6b7280; padding: 20px; text-align: center;'>Upload an image and click <b>Analyze Image</b> to begin.</div>", None, "Ready."),
+        fn=clear_fields,
+        inputs=[],
         outputs=[output_card, output_probs, status_output]
     )
 
