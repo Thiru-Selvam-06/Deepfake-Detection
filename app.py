@@ -13,6 +13,18 @@ from PIL import Image
 import torch
 import gradio as gr
 
+# Patch gradio_client schema parsing bug where boolean additionalProperties crashes get_api_info
+try:
+    import gradio_client.utils as gc_utils
+    _orig_jstype = gc_utils._json_schema_to_python_type
+    def _safe_jstype(schema, defs):
+        if isinstance(schema, bool):
+            return "Any"
+        return _orig_jstype(schema, defs)
+    gc_utils._json_schema_to_python_type = _safe_jstype
+except Exception as _patch_err:
+    print(f"Warning: could not patch gradio_client: {_patch_err}")
+
 # Compatibility shim for Python 3.12+ environments where pkg_resources is deprecated/absent
 try:
     import pkg_resources
@@ -285,7 +297,7 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
 
     with gr.Row():
         with gr.Column(scale=1):
-            input_image = gr.Image(type="pil", label="Upload Image for Analysis", sources=["upload", "clipboard"])
+            input_image = gr.Image(type="pil", label="Upload Image for Analysis")
             with gr.Row():
                 analyze_btn = gr.Button("🔍 Analyze Image", variant="primary", scale=2)
                 clear_btn = gr.ClearButton(components=[input_image], scale=1)
@@ -318,7 +330,8 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
     analyze_btn.click(
         fn=run_inference,
         inputs=[input_image],
-        outputs=[output_card, output_probs, status_output]
+        outputs=[output_card, output_probs, status_output],
+        api_name="predict"
     )
 
     def clear_fields():
@@ -331,7 +344,8 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
     clear_btn.click(
         fn=clear_fields,
         inputs=[],
-        outputs=[output_card, output_probs, status_output]
+        outputs=[output_card, output_probs, status_output],
+        api_name="clear"
     )
 
 if __name__ == "__main__":
