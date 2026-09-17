@@ -48,10 +48,8 @@ def load_model():
     start_t = time.perf_counter()
     try:
         # Check CUDA availability; support seamless CPU fallback
-        if torch.cuda.is_available():
-            DEVICE = torch.device("cuda")
-        else:
-            DEVICE = torch.device("cpu")
+        # Default to CPU for stability and direct CPU verification
+        DEVICE = torch.device("cpu")
         print(f"[UniversalFakeDetect] Target device: {DEVICE}")
 
         # Initialize CLIP ViT-L/14 wrapper
@@ -259,7 +257,7 @@ custom_css = """
 }
 """
 
-with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_css) as demo:
+with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis") as demo:
     gr.Markdown(
         """
         # 🔬 UniversalFakeDetect: AI-Generated Image Detector
@@ -322,4 +320,4 @@ with gr.Blocks(title="UniversalFakeDetect - Single Image Analysis", css=custom_c
     )
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(ssr_mode=False, css=custom_css)
