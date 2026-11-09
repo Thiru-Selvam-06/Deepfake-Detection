@@ -1,0 +1,571 @@
+{
+  "metadata": {
+    "benchmark_phase": "Phase 7 Version 2 (Official Reference Preprocessing)",
+    "timestamp": "2026-11-06T23:19:50Z",
+    "manifest_path": "benchmark/external_generalization_manifest.csv",
+    "dataset_source": "GenImage (TheKernel01/Tiny-GenImage validation split)",
+    "decision_threshold": 0.5,
+    "total_samples": 200,
+    "real_samples": 100,
+    "fake_samples": 100,
+    "generator_counts": {
+      "midjourney": 50,
+      "adm": 50
+    },
+    "environment": {
+      "python_version": "3.13.13 (tags/v3.13.13:01104ce, Apr  7 2026, 19:25:48) [MSC v.1944 64 bit (AMD64)]",
+      "torch_version": "2.13.0+cpu",
+      "platform": "win32"
+    }
+  },
+  "aggregate_performance": {
+    "vit": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 18,
+        "fp": 14,
+        "tn": 86,
+        "fn": 82
+      },
+      "accuracy": 0.52,
+      "accuracy_ci_95": [
+        0.451,
+        0.5882
+      ],
+      "balanced_accuracy": 0.52,
+      "precision": 0.5625,
+      "precision_ci_95": [
+        0.3933,
+        0.7183
+      ],
+      "recall": 0.18,
+      "recall_ci_95": [
+        0.117,
+        0.2667
+      ],
+      "specificity": 0.86,
+      "specificity_ci_95": [
+        0.7786,
+        0.9147
+      ],
+      "f1_score": 0.2727,
+      "roc_auc": 0.4673,
+      "mean_latency_ms": 225.13,
+      "display_name": "ViT (dima806)"
+    },
+    "univfd": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 15,
+        "fp": 2,
+        "tn": 98,
+        "fn": 85
+      },
+      "accuracy": 0.565,
+      "accuracy_ci_95": [
+        0.4957,
+        0.6318
+      ],
+      "balanced_accuracy": 0.565,
+      "precision": 0.8824,
+      "precision_ci_95": [
+        0.6566,
+        0.9671
+      ],
+      "recall": 0.15,
+      "recall_ci_95": [
+        0.0931,
+        0.2328
+      ],
+      "specificity": 0.98,
+      "specificity_ci_95": [
+        0.93,
+        0.9945
+      ],
+      "f1_score": 0.2564,
+      "roc_auc": 0.8037,
+      "mean_latency_ms": 1028.04,
+      "display_name": "UnivFD (CLIP ViT-L/14)"
+    },
+    "chen2024_convnext": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 55,
+        "fp": 1,
+        "tn": 99,
+        "fn": 45
+      },
+      "accuracy": 0.77,
+      "accuracy_ci_95": [
+        0.7069,
+        0.8229
+      ],
+      "balanced_accuracy": 0.77,
+      "precision": 0.9821,
+      "precision_ci_95": [
+        0.9055,
+        0.9968
+      ],
+      "recall": 0.55,
+      "recall_ci_95": [
+        0.4524,
+        0.6439
+      ],
+      "specificity": 0.99,
+      "specificity_ci_95": [
+        0.9455,
+        0.9982
+      ],
+      "f1_score": 0.7051,
+      "roc_auc": 0.9271,
+      "mean_latency_ms": 273.34,
+      "display_name": "ConvNeXt (DRCT / RAID)"
+    },
+    "ensemble_majority_vote": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 18,
+        "fp": 1,
+        "tn": 99,
+        "fn": 82
+      },
+      "accuracy": 0.585,
+      "accuracy_ci_95": [
+        0.5157,
+        0.6511
+      ],
+      "balanced_accuracy": 0.585,
+      "precision": 0.9474,
+      "precision_ci_95": [
+        0.7536,
+        0.9906
+      ],
+      "recall": 0.18,
+      "recall_ci_95": [
+        0.117,
+        0.2667
+      ],
+      "specificity": 0.99,
+      "specificity_ci_95": [
+        0.9455,
+        0.9982
+      ],
+      "f1_score": 0.3025,
+      "roc_auc": 0.7662,
+      "mean_latency_ms": 1526.51,
+      "display_name": "Ensemble (Majority Vote)"
+    },
+    "ensemble_mean_prob": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 23,
+        "fp": 0,
+        "tn": 100,
+        "fn": 77
+      },
+      "accuracy": 0.615,
+      "accuracy_ci_95": [
+        0.546,
+        0.6797
+      ],
+      "balanced_accuracy": 0.615,
+      "precision": 1.0,
+      "precision_ci_95": [
+        0.8569,
+        1.0
+      ],
+      "recall": 0.23,
+      "recall_ci_95": [
+        0.1584,
+        0.3215
+      ],
+      "specificity": 1.0,
+      "specificity_ci_95": [
+        0.963,
+        1.0
+      ],
+      "f1_score": 0.374,
+      "roc_auc": 0.8309,
+      "mean_latency_ms": 1526.51,
+      "display_name": "Ensemble (Mean Fake Probability)"
+    },
+    "ensemble_vit_priority": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 18,
+        "fp": 14,
+        "tn": 86,
+        "fn": 82
+      },
+      "accuracy": 0.52,
+      "accuracy_ci_95": [
+        0.451,
+        0.5882
+      ],
+      "balanced_accuracy": 0.52,
+      "precision": 0.5625,
+      "precision_ci_95": [
+        0.3933,
+        0.7183
+      ],
+      "recall": 0.18,
+      "recall_ci_95": [
+        0.117,
+        0.2667
+      ],
+      "specificity": 0.86,
+      "specificity_ci_95": [
+        0.7786,
+        0.9147
+      ],
+      "f1_score": 0.2727,
+      "roc_auc": 0.4673,
+      "mean_latency_ms": 225.13,
+      "display_name": "Ensemble (ViT Priority Fallback)"
+    }
+  },
+  "generator_slices": {
+    "vit": {
+      "display_name": "ViT (dima806)",
+      "authentic_control": {
+        "total": 100,
+        "correct_real": 86,
+        "specificity": 0.86,
+        "score_mean": 0.3009,
+        "score_std": 0.1813
+      },
+      "midjourney_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.64,
+        "recall": 0.2,
+        "specificity": 0.86,
+        "precision": 0.4167,
+        "f1_score": 0.2703,
+        "roc_auc": 0.5336,
+        "raw_detections": "10 / 50 (20.0%)",
+        "score_mean": 0.3316,
+        "score_std": 0.1873
+      },
+      "adm_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.6267,
+        "recall": 0.16,
+        "specificity": 0.86,
+        "precision": 0.3636,
+        "f1_score": 0.2222,
+        "roc_auc": 0.401,
+        "raw_detections": "8 / 50 (16.0%)",
+        "score_mean": 0.2531,
+        "score_std": 0.2405
+      }
+    },
+    "univfd": {
+      "display_name": "UnivFD (CLIP ViT-L/14)",
+      "authentic_control": {
+        "total": 100,
+        "correct_real": 98,
+        "specificity": 0.98,
+        "score_mean": 0.0368,
+        "score_std": 0.1249
+      },
+      "midjourney_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.7067,
+        "recall": 0.16,
+        "specificity": 0.98,
+        "precision": 0.8,
+        "f1_score": 0.2667,
+        "roc_auc": 0.7952,
+        "raw_detections": "8 / 50 (16.0%)",
+        "score_mean": 0.2084,
+        "score_std": 0.3078
+      },
+      "adm_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.7,
+        "recall": 0.14,
+        "specificity": 0.98,
+        "precision": 0.7778,
+        "f1_score": 0.2373,
+        "roc_auc": 0.8122,
+        "raw_detections": "7 / 50 (14.0%)",
+        "score_mean": 0.1913,
+        "score_std": 0.2555
+      }
+    },
+    "chen2024_convnext": {
+      "display_name": "ConvNeXt (DRCT / RAID)",
+      "authentic_control": {
+        "total": 100,
+        "correct_real": 99,
+        "specificity": 0.99,
+        "score_mean": 0.0146,
+        "score_std": 0.1021
+      },
+      "midjourney_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.9933,
+        "recall": 1.0,
+        "specificity": 0.99,
+        "precision": 0.9804,
+        "f1_score": 0.9901,
+        "roc_auc": 0.9992,
+        "raw_detections": "50 / 50 (100.0%)",
+        "score_mean": 0.9904,
+        "score_std": 0.0349
+      },
+      "adm_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.6933,
+        "recall": 0.1,
+        "specificity": 0.99,
+        "precision": 0.8333,
+        "f1_score": 0.1786,
+        "roc_auc": 0.855,
+        "raw_detections": "5 / 50 (10.0%)",
+        "score_mean": 0.1608,
+        "score_std": 0.2518
+      }
+    },
+    "ensemble_majority_vote": {
+      "display_name": "Ensemble (Majority Vote)",
+      "authentic_control": {
+        "total": 100,
+        "correct_real": 99,
+        "specificity": 0.99,
+        "score_mean": 0.0567,
+        "score_std": 0.1338
+      },
+      "midjourney_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.76,
+        "recall": 0.3,
+        "specificity": 0.99,
+        "precision": 0.9375,
+        "f1_score": 0.4545,
+        "roc_auc": 0.9393,
+        "raw_detections": "15 / 50 (30.0%)",
+        "score_mean": 0.4533,
+        "score_std": 0.1973
+      },
+      "adm_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.68,
+        "recall": 0.06,
+        "specificity": 0.99,
+        "precision": 0.75,
+        "f1_score": 0.1111,
+        "roc_auc": 0.5931,
+        "raw_detections": "3 / 50 (6.0%)",
+        "score_mean": 0.1333,
+        "score_std": 0.2
+      }
+    },
+    "ensemble_mean_prob": {
+      "display_name": "Ensemble (Mean Fake Probability)",
+      "authentic_control": {
+        "total": 100,
+        "correct_real": 100,
+        "specificity": 1.0,
+        "score_mean": 0.1175,
+        "score_std": 0.0865
+      },
+      "midjourney_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.8,
+        "recall": 0.4,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "f1_score": 0.5714,
+        "roc_auc": 0.987,
+        "raw_detections": "20 / 50 (40.0%)",
+        "score_mean": 0.5101,
+        "score_std": 0.1307
+      },
+      "adm_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.6867,
+        "recall": 0.06,
+        "specificity": 1.0,
+        "precision": 1.0,
+        "f1_score": 0.1132,
+        "roc_auc": 0.6748,
+        "raw_detections": "3 / 50 (6.0%)",
+        "score_mean": 0.2017,
+        "score_std": 0.1512
+      }
+    },
+    "ensemble_vit_priority": {
+      "display_name": "Ensemble (ViT Priority Fallback)",
+      "authentic_control": {
+        "total": 100,
+        "correct_real": 86,
+        "specificity": 0.86,
+        "score_mean": 0.3009,
+        "score_std": 0.1813
+      },
+      "midjourney_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.64,
+        "recall": 0.2,
+        "specificity": 0.86,
+        "precision": 0.4167,
+        "f1_score": 0.2703,
+        "roc_auc": 0.5336,
+        "raw_detections": "10 / 50 (20.0%)",
+        "score_mean": 0.3316,
+        "score_std": 0.1873
+      },
+      "adm_slice": {
+        "total_cohort_samples": 150,
+        "accuracy": 0.6267,
+        "recall": 0.16,
+        "specificity": 0.86,
+        "precision": 0.3636,
+        "f1_score": 0.2222,
+        "roc_auc": 0.401,
+        "raw_detections": "8 / 50 (16.0%)",
+        "score_mean": 0.2531,
+        "score_std": 0.2405
+      }
+    }
+  },
+  "pairwise_agreement": {
+    "vit_vs_univfd": {
+      "detector_1": "ViT (dima806)",
+      "detector_2": "UnivFD (CLIP ViT-L/14)",
+      "agreed_samples": 161,
+      "total_samples": 200,
+      "agreement_percentage": 80.5,
+      "both_fake": 5,
+      "both_real": 156,
+      "d1_fake_d2_real": 27,
+      "d1_real_d2_fake": 12,
+      "cohen_kappa": 0.1047
+    },
+    "vit_vs_chen2024_convnext": {
+      "detector_1": "ViT (dima806)",
+      "detector_2": "ConvNeXt (DRCT / RAID)",
+      "agreed_samples": 134,
+      "total_samples": 200,
+      "agreement_percentage": 67.0,
+      "both_fake": 11,
+      "both_real": 123,
+      "d1_fake_d2_real": 21,
+      "d1_real_d2_fake": 45,
+      "cohen_kappa": 0.0582
+    },
+    "univfd_vs_chen2024_convnext": {
+      "detector_1": "UnivFD (CLIP ViT-L/14)",
+      "detector_2": "ConvNeXt (DRCT / RAID)",
+      "agreed_samples": 145,
+      "total_samples": 200,
+      "agreement_percentage": 72.5,
+      "both_fake": 9,
+      "both_real": 136,
+      "d1_fake_d2_real": 8,
+      "d1_real_d2_fake": 47,
+      "cohen_kappa": 0.1336
+    }
+  },
+  "all_three_agree_count": 120,
+  "all_three_agree_pct": 60.0,
+  "version_comparison_v1_vs_v2": {
+    "vit": {
+      "v1_accuracy": 0.52,
+      "v2_accuracy": 0.52,
+      "delta_accuracy": 0.0,
+      "v1_recall": 0.18,
+      "v2_recall": 0.18,
+      "delta_recall": 0.0,
+      "v1_specificity": 0.86,
+      "v2_specificity": 0.86,
+      "delta_specificity": 0.0,
+      "v1_roc_auc": 0.4673,
+      "v2_roc_auc": 0.4673,
+      "delta_roc_auc": 0.0
+    },
+    "univfd": {
+      "v1_accuracy": 0.575,
+      "v2_accuracy": 0.565,
+      "delta_accuracy": -0.01,
+      "v1_recall": 0.15,
+      "v2_recall": 0.15,
+      "delta_recall": 0.0,
+      "v1_specificity": 1.0,
+      "v2_specificity": 0.98,
+      "delta_specificity": -0.02,
+      "v1_roc_auc": 0.6662,
+      "v2_roc_auc": 0.8037,
+      "delta_roc_auc": 0.1375
+    },
+    "chen2024_convnext": {
+      "v1_accuracy": 0.565,
+      "v2_accuracy": 0.77,
+      "delta_accuracy": 0.205,
+      "v1_recall": 0.13,
+      "v2_recall": 0.55,
+      "delta_recall": 0.42,
+      "v1_specificity": 1.0,
+      "v2_specificity": 0.99,
+      "delta_specificity": -0.01,
+      "v1_roc_auc": 0.7926,
+      "v2_roc_auc": 0.9271,
+      "delta_roc_auc": 0.1345
+    },
+    "ensemble_majority_vote": {
+      "v1_accuracy": 0.525,
+      "v2_accuracy": 0.585,
+      "delta_accuracy": 0.06,
+      "v1_recall": 0.05,
+      "v2_recall": 0.18,
+      "delta_recall": 0.13,
+      "v1_specificity": 1.0,
+      "v2_specificity": 0.99,
+      "delta_specificity": -0.01,
+      "v1_roc_auc": 0.7181,
+      "v2_roc_auc": 0.7662,
+      "delta_roc_auc": 0.0481
+    },
+    "ensemble_mean_prob": {
+      "v1_accuracy": 0.525,
+      "v2_accuracy": 0.615,
+      "delta_accuracy": 0.09,
+      "v1_recall": 0.05,
+      "v2_recall": 0.23,
+      "delta_recall": 0.18,
+      "v1_specificity": 1.0,
+      "v2_specificity": 1.0,
+      "delta_specificity": 0.0,
+      "v1_roc_auc": 0.7181,
+      "v2_roc_auc": 0.8309,
+      "delta_roc_auc": 0.1128
+    },
+    "ensemble_vit_priority": {
+      "v1_accuracy": 0.52,
+      "v2_accuracy": 0.52,
+      "delta_accuracy": 0.0,
+      "v1_recall": 0.18,
+      "v2_recall": 0.18,
+      "delta_recall": 0.0,
+      "v1_specificity": 0.86,
+      "v2_specificity": 0.86,
+      "delta_specificity": 0.0,
+      "v1_roc_auc": 0.4673,
+      "v2_roc_auc": 0.4673,
+      "delta_roc_auc": 0.0
+    }
+  }
+}

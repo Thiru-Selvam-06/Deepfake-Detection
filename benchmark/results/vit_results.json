@@ -15,7 +15,7 @@
     "threshold": 0.5,
     "device": "cpu",
     "preprocessing": "ViTImageProcessor(Resize 224x224, Rescale 1/255, Normalize mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])",
-    "inference_time_ms": 1446.54,
+    "inference_time_ms": 1162.91,
     "error": null,
     "warning": "Vision Transformer trained for facial deepfake detection. Evaluates learned visual artifact representations; does not guarantee authenticity."
   },
@@ -35,7 +35,7 @@
     "threshold": 0.5,
     "device": "cpu",
     "preprocessing": "ViTImageProcessor(Resize 224x224, Rescale 1/255, Normalize mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])",
-    "inference_time_ms": 153.99,
+    "inference_time_ms": 397.87,
     "error": null,
     "warning": "Vision Transformer trained for facial deepfake detection. Evaluates learned visual artifact representations; does not guarantee authenticity."
   },
@@ -55,7 +55,7 @@
     "threshold": 0.5,
     "device": "cpu",
     "preprocessing": "ViTImageProcessor(Resize 224x224, Rescale 1/255, Normalize mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])",
-    "inference_time_ms": 160.02,
+    "inference_time_ms": 403.94,
     "error": null,
     "warning": "Vision Transformer trained for facial deepfake detection. Evaluates learned visual artifact representations; does not guarantee authenticity."
   },

@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "timestamp": "2026-11-02T07:43:16Z",
+    "manifest_path": "benchmark/phase6_test_manifest.csv",
+    "dataset_source": "Kaggle 140k Real and Fake Faces (FFHQ / StyleGAN)",
+    "total_test_samples": 200,
+    "class_distribution": {
+      "REAL": 100,
+      "FAKE": 100
+    },
+    "environment": {
+      "python_version": "3.13.13 (tags/v3.13.13:01104ce, Apr  7 2026, 19:25:48) [MSC v.1944 64 bit (AMD64)]",
+      "torch_version": "2.13.0+cpu",
+      "platform": "win32"
+    }
+  },
+  "model_performance": {
+    "vit": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 100,
+        "fp": 4,
+        "tn": 96,
+        "fn": 0
+      },
+      "accuracy": 0.98,
+      "accuracy_ci_95": [
+        0.9497,
+        0.9922
+      ],
+      "balanced_accuracy": 0.98,
+      "precision": 0.9615,
+      "precision_ci_95": [
+        0.9053,
+        0.9849
+      ],
+      "recall": 1.0,
+      "recall_ci_95": [
+        0.963,
+        1.0
+      ],
+      "specificity": 0.96,
+      "specificity_ci_95": [
+        0.9016,
+        0.9843
+      ],
+      "f1_score": 0.9804,
+      "mean_latency_ms": 192.38,
+      "display_name": "ViT (dima806)"
+    },
+    "univfd": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 17,
+        "fp": 14,
+        "tn": 86,
+        "fn": 83
+      },
+      "accuracy": 0.515,
+      "accuracy_ci_95": [
+        0.4461,
+        0.5833
+      ],
+      "balanced_accuracy": 0.515,
+      "precision": 0.5484,
+      "precision_ci_95": [
+        0.3777,
+        0.7084
+      ],
+      "recall": 0.17,
+      "recall_ci_95": [
+        0.1089,
+        0.2555
+      ],
+      "specificity": 0.86,
+      "specificity_ci_95": [
+        0.7786,
+        0.9147
+      ],
+      "f1_score": 0.2595,
+      "mean_latency_ms": 942.15,
+      "display_name": "UnivFD (CLIP ViT-L/14)"
+    },
+    "chen2024_convnext": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 16,
+        "fp": 14,
+        "tn": 86,
+        "fn": 84
+      },
+      "accuracy": 0.51,
+      "accuracy_ci_95": [
+        0.4412,
+        0.5784
+      ],
+      "balanced_accuracy": 0.51,
+      "precision": 0.5333,
+      "precision_ci_95": [
+        0.3614,
+        0.6977
+      ],
+      "recall": 0.16,
+      "recall_ci_95": [
+        0.101,
+        0.2442
+      ],
+      "specificity": 0.86,
+      "specificity_ci_95": [
+        0.7786,
+        0.9147
+      ],
+      "f1_score": 0.2462,
+      "mean_latency_ms": 252.65,
+      "display_name": "ConvNeXt (DRCT / RAID)"
+    },
+    "ensemble_majority_vote": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 30,
+        "fp": 4,
+        "tn": 96,
+        "fn": 70
+      },
+      "accuracy": 0.63,
+      "accuracy_ci_95": [
+        0.5612,
+        0.6939
+      ],
+      "balanced_accuracy": 0.63,
+      "precision": 0.8824,
+      "precision_ci_95": [
+        0.7338,
+        0.9533
+      ],
+      "recall": 0.3,
+      "recall_ci_95": [
+        0.2189,
+        0.3958
+      ],
+      "specificity": 0.96,
+      "specificity_ci_95": [
+        0.9016,
+        0.9843
+      ],
+      "f1_score": 0.4478,
+      "mean_latency_ms": 1387.18,
+      "display_name": "Ensemble (Majority Vote)"
+    },
+    "ensemble_mean_prob": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 31,
+        "fp": 4,
+        "tn": 96,
+        "fn": 69
+      },
+      "accuracy": 0.635,
+      "accuracy_ci_95": [
+        0.5663,
+        0.6986
+      ],
+      "balanced_accuracy": 0.635,
+      "precision": 0.8857,
+      "precision_ci_95": [
+        0.7405,
+        0.9546
+      ],
+      "recall": 0.31,
+      "recall_ci_95": [
+        0.2278,
+        0.4063
+      ],
+      "specificity": 0.96,
+      "specificity_ci_95": [
+        0.9016,
+        0.9843
+      ],
+      "f1_score": 0.4593,
+      "mean_latency_ms": 1387.18,
+      "display_name": "Ensemble (Mean Fake Probability)"
+    },
+    "ensemble_vit_priority": {
+      "total_samples": 200,
+      "valid_evaluations": 200,
+      "non_decisive_or_error": 0,
+      "confusion_matrix": {
+        "tp": 100,
+        "fp": 4,
+        "tn": 96,
+        "fn": 0
+      },
+      "accuracy": 0.98,
+      "accuracy_ci_95": [
+        0.9497,
+        0.9922
+      ],
+      "balanced_accuracy": 0.98,
+      "precision": 0.9615,
+      "precision_ci_95": [
+        0.9053,
+        0.9849
+      ],
+      "recall": 1.0,
+      "recall_ci_95": [
+        0.963,
+        1.0
+      ],
+      "specificity": 0.96,
+      "specificity_ci_95": [
+        0.9016,
+        0.9843
+      ],
+      "f1_score": 0.9804,
+      "mean_latency_ms": 192.38,
+      "display_name": "Ensemble (ViT Priority Fallback)"
+    }
+  },
+  "agreement_analysis": {
+    "all_three_agree_count": 77,
+    "all_three_agree_fraction": 0.385,
+    "vit_vs_univfd": {
+      "raw_agreement_rate": 0.505,
+      "cohen_kappa": 0.0366,
+      "both_fake": 18,
+      "both_real": 83,
+      "m1_fake_m2_real": 86,
+      "m1_real_m2_fake": 13
+    },
+    "vit_vs_convnext": {
+      "raw_agreement_rate": 0.52,
+      "cohen_kappa": 0.0661,
+      "both_fake": 19,
+      "both_real": 85,
+      "m1_fake_m2_real": 85,
+      "m1_real_m2_fake": 11
+    },
+    "univfd_vs_convnext": {
+      "raw_agreement_rate": 0.745,
+      "cohen_kappa": 0.0135,
+      "both_fake": 5,
+      "both_real": 144,
+      "m1_fake_m2_real": 26,
+      "m1_real_m2_fake": 25
+    }
+  }
+}

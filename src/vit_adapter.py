@@ -104,6 +104,16 @@ class ViTAdapter:
             self.model = None
             return False
 
+    def unload_model(self) -> None:
+        """
+        Explicitly releases the Vision Transformer model and image processor
+        to free system and GPU memory.
+        """
+        self.model = None
+        self.processor = None
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+
     def predict(self, image_input: Any) -> DetectorResult:
         """
         Execute single-image inference and return a standardized DetectorResult.

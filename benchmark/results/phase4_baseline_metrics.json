@@ -1,0 +1,723 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-30T10:28:11Z",
+    "manifest_path": "benchmark/evaluation_manifest.csv",
+    "evaluated_split": "held_out_test",
+    "total_samples_evaluated": 105,
+    "total_predictions_evaluated": 315,
+    "eligible_classification_samples": 103,
+    "facial_samples": 100,
+    "scene_diagnostic_samples": 3,
+    "rejection_control_samples": 2,
+    "environment": {
+      "os": "Windows",
+      "os_release": "11",
+      "python_version": "3.13.13 (tags/v3.13.13:01104ce, Apr  7 2026, 19:25:48) [MSC v.1944 64 bit (AMD64)]",
+      "torch_version": "2.13.0+cpu",
+      "device": "cpu",
+      "total_ram_gb": 7.71
+    },
+    "execution_duration_sec": 345.91
+  },
+  "detectors": {
+    "chen2024_convnext": {
+      "model_info": {
+        "detector_key": "chen2024_convnext",
+        "detector_name": "Chen2024ConvNeXtDetector",
+        "model_name": "chen2024_convnext (ConvNeXt-Base)",
+        "architecture": "ConvNeXt-Base + Linear Head (1024 -> 2)",
+        "decision_threshold": 0.5,
+        "input_dimensions": "3x224x224",
+        "preprocessing": "RAID benchmark constituent detector (Chen et al. 2024 ConvNeXt-Base binary classifier)."
+      },
+      "overall_classification_metrics": {
+        "confusion_matrix": {
+          "tp": 6,
+          "fp": 14,
+          "tn": 37,
+          "fn": 46
+        },
+        "accuracy": 0.4175,
+        "accuracy_fraction": "43/103",
+        "precision": 0.3,
+        "precision_fraction": "6/20",
+        "recall": 0.1154,
+        "recall_fraction": "6/52",
+        "specificity": 0.7255,
+        "specificity_fraction": "37/51",
+        "f1_score": 0.1667,
+        "balanced_accuracy": 0.4204,
+        "false_positives": [
+          "test_face_real_003",
+          "test_face_real_015",
+          "test_face_real_022",
+          "test_face_real_030",
+          "test_face_real_031",
+          "test_face_real_032",
+          "test_face_real_033",
+          "test_face_real_034",
+          "test_face_real_040",
+          "test_face_real_042",
+          "test_face_real_044",
+          "test_face_real_046",
+          "test_face_real_048",
+          "test_face_real_049"
+        ],
+        "false_negatives": [
+          "test_face_fake_001",
+          "test_face_fake_002",
+          "test_face_fake_003",
+          "test_face_fake_004",
+          "test_face_fake_006",
+          "test_face_fake_007",
+          "test_face_fake_010",
+          "test_face_fake_011",
+          "test_face_fake_012",
+          "test_face_fake_013",
+          "test_face_fake_014",
+          "test_face_fake_015",
+          "test_face_fake_016",
+          "test_face_fake_017",
+          "test_face_fake_018",
+          "test_face_fake_019",
+          "test_face_fake_020",
+          "test_face_fake_021",
+          "test_face_fake_022",
+          "test_face_fake_023",
+          "test_face_fake_024",
+          "test_face_fake_025",
+          "test_face_fake_026",
+          "test_face_fake_027",
+          "test_face_fake_028",
+          "test_face_fake_031",
+          "test_face_fake_032",
+          "test_face_fake_033",
+          "test_face_fake_034",
+          "test_face_fake_036",
+          "test_face_fake_037",
+          "test_face_fake_038",
+          "test_face_fake_039",
+          "test_face_fake_040",
+          "test_face_fake_041",
+          "test_face_fake_042",
+          "test_face_fake_043",
+          "test_face_fake_044",
+          "test_face_fake_045",
+          "test_face_fake_046",
+          "test_face_fake_047",
+          "test_face_fake_048",
+          "test_face_fake_049",
+          "test_face_fake_050",
+          "test_scene_diffusion_001",
+          "test_scene_manip_001"
+        ],
+        "execution_errors": [],
+        "sample_counts": {
+          "total_eligible": 103,
+          "ground_truth_real": 51,
+          "ground_truth_fake": 52,
+          "valid_predictions": 103,
+          "errors": 0
+        }
+      },
+      "facial_evaluation_metrics": {
+        "confusion_matrix": {
+          "tp": 6,
+          "fp": 14,
+          "tn": 36,
+          "fn": 44
+        },
+        "accuracy": 0.42,
+        "accuracy_fraction": "42/100",
+        "precision": 0.3,
+        "precision_fraction": "6/20",
+        "recall": 0.12,
+        "recall_fraction": "6/50",
+        "specificity": 0.72,
+        "specificity_fraction": "36/50",
+        "f1_score": 0.1714,
+        "balanced_accuracy": 0.42,
+        "false_positives": [
+          "test_face_real_003",
+          "test_face_real_015",
+          "test_face_real_022",
+          "test_face_real_030",
+          "test_face_real_031",
+          "test_face_real_032",
+          "test_face_real_033",
+          "test_face_real_034",
+          "test_face_real_040",
+          "test_face_real_042",
+          "test_face_real_044",
+          "test_face_real_046",
+          "test_face_real_048",
+          "test_face_real_049"
+        ],
+        "false_negatives": [
+          "test_face_fake_001",
+          "test_face_fake_002",
+          "test_face_fake_003",
+          "test_face_fake_004",
+          "test_face_fake_006",
+          "test_face_fake_007",
+          "test_face_fake_010",
+          "test_face_fake_011",
+          "test_face_fake_012",
+          "test_face_fake_013",
+          "test_face_fake_014",
+          "test_face_fake_015",
+          "test_face_fake_016",
+          "test_face_fake_017",
+          "test_face_fake_018",
+          "test_face_fake_019",
+          "test_face_fake_020",
+          "test_face_fake_021",
+          "test_face_fake_022",
+          "test_face_fake_023",
+          "test_face_fake_024",
+          "test_face_fake_025",
+          "test_face_fake_026",
+          "test_face_fake_027",
+          "test_face_fake_028",
+          "test_face_fake_031",
+          "test_face_fake_032",
+          "test_face_fake_033",
+          "test_face_fake_034",
+          "test_face_fake_036",
+          "test_face_fake_037",
+          "test_face_fake_038",
+          "test_face_fake_039",
+          "test_face_fake_040",
+          "test_face_fake_041",
+          "test_face_fake_042",
+          "test_face_fake_043",
+          "test_face_fake_044",
+          "test_face_fake_045",
+          "test_face_fake_046",
+          "test_face_fake_047",
+          "test_face_fake_048",
+          "test_face_fake_049",
+          "test_face_fake_050"
+        ],
+        "execution_errors": [],
+        "accuracy_95ci": [
+          0.328,
+          0.5179
+        ],
+        "precision_95ci": [
+          0.1455,
+          0.519
+        ],
+        "recall_95ci": [
+          0.0562,
+          0.238
+        ],
+        "specificity_95ci": [
+          0.5833,
+          0.8253
+        ],
+        "mean_fake_prob_real_faces": 0.2761,
+        "mean_fake_prob_fake_faces": 0.1111,
+        "sample_counts": {
+          "total_facial": 100,
+          "ground_truth_real": 50,
+          "ground_truth_fake": 50
+        },
+        "limitations": [
+          "Resolution and crop bias: tightly cropped centered 256x256 portraits",
+          "Generator homogeneity: synthetic faces originate solely from StyleGAN/StyleGAN2 architectures",
+          "Photographic source homogeneity: real faces originate exclusively from FFHQ Flickr captures"
+        ]
+      },
+      "scene_diagnostic_results": {
+        "test_scene_real_001": {
+          "sample_id": "test_scene_real_001",
+          "category": "authentic_scene",
+          "ground_truth": "REAL",
+          "prediction": "REAL",
+          "fake_probability": 0.021159,
+          "raw_logit": -3.834302,
+          "latency_ms": 873.95,
+          "correct": true
+        },
+        "test_scene_diffusion_001": {
+          "sample_id": "test_scene_diffusion_001",
+          "category": "diffusion_scene",
+          "ground_truth": "FAKE",
+          "prediction": "REAL",
+          "fake_probability": 0.000345,
+          "raw_logit": -7.971663,
+          "latency_ms": 505.27,
+          "correct": false
+        },
+        "test_scene_manip_001": {
+          "sample_id": "test_scene_manip_001",
+          "category": "manipulated_scene",
+          "ground_truth": "FAKE",
+          "prediction": "REAL",
+          "fake_probability": 0.032222,
+          "raw_logit": -3.402339,
+          "latency_ms": 426.38,
+          "correct": false
+        }
+      },
+      "rejection_control_results": {
+        "test_control_corr_001": {
+          "sample_id": "test_control_corr_001",
+          "category": "corrupted_file",
+          "ground_truth": "REJECTION_CONTROL",
+          "prediction": "ERROR",
+          "status": "ERROR",
+          "rejection_status": "REJECTED",
+          "error_message": "Invalid or corrupted image: cannot identify image file 'C:/Users/user/Desktop/multi model connection/benchmark/images/corrupted/corrupted_image.png'",
+          "rejection_successful": true
+        },
+        "test_control_unsupp_001": {
+          "sample_id": "test_control_unsupp_001",
+          "category": "unsupported_format",
+          "ground_truth": "REJECTION_CONTROL",
+          "prediction": "ERROR",
+          "status": "ERROR",
+          "rejection_status": "REJECTED",
+          "error_message": "Invalid or corrupted image: cannot identify image file 'C:/Users/user/Desktop/multi model connection/benchmark/images/corrupted/unsupported_doc.txt'",
+          "rejection_successful": true
+        }
+      },
+      "latency_summary_ms": {
+        "mean": 553.84,
+        "median": 449.42,
+        "min": 361.56,
+        "max": 5431.5
+      }
+    },
+    "univfd": {
+      "model_info": {
+        "detector_key": "univfd",
+        "detector_name": "UniversalFakeDetect",
+        "model_name": "CLIP:ViT-L/14 + fc_weights.pth",
+        "architecture": "CLIP ViT-L/14 + Linear Probe",
+        "decision_threshold": 0.5,
+        "input_dimensions": "3x224x224",
+        "preprocessing": "CVPR 2023 UniversalFakeDetect model using CLIP ViT-L/14 representation."
+      },
+      "overall_classification_metrics": {
+        "confusion_matrix": {
+          "tp": 11,
+          "fp": 1,
+          "tn": 50,
+          "fn": 41
+        },
+        "accuracy": 0.5922,
+        "accuracy_fraction": "61/103",
+        "precision": 0.9167,
+        "precision_fraction": "11/12",
+        "recall": 0.2115,
+        "recall_fraction": "11/52",
+        "specificity": 0.9804,
+        "specificity_fraction": "50/51",
+        "f1_score": 0.3437,
+        "balanced_accuracy": 0.596,
+        "false_positives": [
+          "test_face_real_001"
+        ],
+        "false_negatives": [
+          "test_face_fake_001",
+          "test_face_fake_002",
+          "test_face_fake_003",
+          "test_face_fake_004",
+          "test_face_fake_008",
+          "test_face_fake_010",
+          "test_face_fake_012",
+          "test_face_fake_013",
+          "test_face_fake_014",
+          "test_face_fake_015",
+          "test_face_fake_016",
+          "test_face_fake_017",
+          "test_face_fake_018",
+          "test_face_fake_020",
+          "test_face_fake_021",
+          "test_face_fake_022",
+          "test_face_fake_023",
+          "test_face_fake_024",
+          "test_face_fake_025",
+          "test_face_fake_026",
+          "test_face_fake_027",
+          "test_face_fake_029",
+          "test_face_fake_030",
+          "test_face_fake_031",
+          "test_face_fake_032",
+          "test_face_fake_034",
+          "test_face_fake_035",
+          "test_face_fake_036",
+          "test_face_fake_037",
+          "test_face_fake_038",
+          "test_face_fake_039",
+          "test_face_fake_040",
+          "test_face_fake_042",
+          "test_face_fake_043",
+          "test_face_fake_044",
+          "test_face_fake_046",
+          "test_face_fake_047",
+          "test_face_fake_049",
+          "test_face_fake_050",
+          "test_scene_diffusion_001",
+          "test_scene_manip_001"
+        ],
+        "execution_errors": [],
+        "sample_counts": {
+          "total_eligible": 103,
+          "ground_truth_real": 51,
+          "ground_truth_fake": 52,
+          "valid_predictions": 103,
+          "errors": 0
+        }
+      },
+      "facial_evaluation_metrics": {
+        "confusion_matrix": {
+          "tp": 11,
+          "fp": 1,
+          "tn": 49,
+          "fn": 39
+        },
+        "accuracy": 0.6,
+        "accuracy_fraction": "60/100",
+        "precision": 0.9167,
+        "precision_fraction": "11/12",
+        "recall": 0.22,
+        "recall_fraction": "11/50",
+        "specificity": 0.98,
+        "specificity_fraction": "49/50",
+        "f1_score": 0.3548,
+        "balanced_accuracy": 0.6,
+        "false_positives": [
+          "test_face_real_001"
+        ],
+        "false_negatives": [
+          "test_face_fake_001",
+          "test_face_fake_002",
+          "test_face_fake_003",
+          "test_face_fake_004",
+          "test_face_fake_008",
+          "test_face_fake_010",
+          "test_face_fake_012",
+          "test_face_fake_013",
+          "test_face_fake_014",
+          "test_face_fake_015",
+          "test_face_fake_016",
+          "test_face_fake_017",
+          "test_face_fake_018",
+          "test_face_fake_020",
+          "test_face_fake_021",
+          "test_face_fake_022",
+          "test_face_fake_023",
+          "test_face_fake_024",
+          "test_face_fake_025",
+          "test_face_fake_026",
+          "test_face_fake_027",
+          "test_face_fake_029",
+          "test_face_fake_030",
+          "test_face_fake_031",
+          "test_face_fake_032",
+          "test_face_fake_034",
+          "test_face_fake_035",
+          "test_face_fake_036",
+          "test_face_fake_037",
+          "test_face_fake_038",
+          "test_face_fake_039",
+          "test_face_fake_040",
+          "test_face_fake_042",
+          "test_face_fake_043",
+          "test_face_fake_044",
+          "test_face_fake_046",
+          "test_face_fake_047",
+          "test_face_fake_049",
+          "test_face_fake_050"
+        ],
+        "execution_errors": [],
+        "accuracy_95ci": [
+          0.502,
+          0.6906
+        ],
+        "precision_95ci": [
+          0.6461,
+          0.9851
+        ],
+        "recall_95ci": [
+          0.1275,
+          0.3524
+        ],
+        "specificity_95ci": [
+          0.895,
+          0.9965
+        ],
+        "mean_fake_prob_real_faces": 0.0745,
+        "mean_fake_prob_fake_faces": 0.2482,
+        "sample_counts": {
+          "total_facial": 100,
+          "ground_truth_real": 50,
+          "ground_truth_fake": 50
+        },
+        "limitations": [
+          "Resolution and crop bias: tightly cropped centered 256x256 portraits",
+          "Generator homogeneity: synthetic faces originate solely from StyleGAN/StyleGAN2 architectures",
+          "Photographic source homogeneity: real faces originate exclusively from FFHQ Flickr captures"
+        ]
+      },
+      "scene_diagnostic_results": {
+        "test_scene_real_001": {
+          "sample_id": "test_scene_real_001",
+          "category": "authentic_scene",
+          "ground_truth": "REAL",
+          "prediction": "REAL",
+          "fake_probability": 1.8e-05,
+          "raw_logit": -10.932908,
+          "latency_ms": 2244.57,
+          "correct": true
+        },
+        "test_scene_diffusion_001": {
+          "sample_id": "test_scene_diffusion_001",
+          "category": "diffusion_scene",
+          "ground_truth": "FAKE",
+          "prediction": "REAL",
+          "fake_probability": 0.000828,
+          "raw_logit": -7.096089,
+          "latency_ms": 1919.41,
+          "correct": false
+        },
+        "test_scene_manip_001": {
+          "sample_id": "test_scene_manip_001",
+          "category": "manipulated_scene",
+          "ground_truth": "FAKE",
+          "prediction": "REAL",
+          "fake_probability": 0.006011,
+          "raw_logit": -5.108142,
+          "latency_ms": 1897.77,
+          "correct": false
+        }
+      },
+      "rejection_control_results": {
+        "test_control_corr_001": {
+          "sample_id": "test_control_corr_001",
+          "category": "corrupted_file",
+          "ground_truth": "REJECTION_CONTROL",
+          "prediction": "ERROR",
+          "status": "ERROR",
+          "rejection_status": "REJECTED",
+          "error_message": "Invalid or corrupted image: cannot identify image file 'C:/Users/user/Desktop/multi model connection/benchmark/images/corrupted/corrupted_image.png'",
+          "rejection_successful": true
+        },
+        "test_control_unsupp_001": {
+          "sample_id": "test_control_unsupp_001",
+          "category": "unsupported_format",
+          "ground_truth": "REJECTION_CONTROL",
+          "prediction": "ERROR",
+          "status": "ERROR",
+          "rejection_status": "REJECTED",
+          "error_message": "Invalid or corrupted image: cannot identify image file 'C:/Users/user/Desktop/multi model connection/benchmark/images/corrupted/unsupported_doc.txt'",
+          "rejection_successful": true
+        }
+      },
+      "latency_summary_ms": {
+        "mean": 2013.16,
+        "median": 1785.73,
+        "min": 1530.2,
+        "max": 24169.95
+      }
+    },
+    "vit": {
+      "model_info": {
+        "detector_key": "vit",
+        "detector_name": "ViTDeepfakeDetector",
+        "model_name": "dima806/deepfake_vs_real_image_detection (ViT-Base/16)",
+        "architecture": "ViTForImageClassification (google/vit-base-patch16-224)",
+        "decision_threshold": 0.5,
+        "input_dimensions": "3x224x224",
+        "preprocessing": "Fine-tuned Vision Transformer for deepfake detection."
+      },
+      "overall_classification_metrics": {
+        "confusion_matrix": {
+          "tp": 50,
+          "fp": 0,
+          "tn": 51,
+          "fn": 2
+        },
+        "accuracy": 0.9806,
+        "accuracy_fraction": "101/103",
+        "precision": 1.0,
+        "precision_fraction": "50/50",
+        "recall": 0.9615,
+        "recall_fraction": "50/52",
+        "specificity": 1.0,
+        "specificity_fraction": "51/51",
+        "f1_score": 0.9804,
+        "balanced_accuracy": 0.9808,
+        "false_positives": [],
+        "false_negatives": [
+          "test_scene_diffusion_001",
+          "test_scene_manip_001"
+        ],
+        "execution_errors": [],
+        "sample_counts": {
+          "total_eligible": 103,
+          "ground_truth_real": 51,
+          "ground_truth_fake": 52,
+          "valid_predictions": 103,
+          "errors": 0
+        }
+      },
+      "facial_evaluation_metrics": {
+        "confusion_matrix": {
+          "tp": 50,
+          "fp": 0,
+          "tn": 50,
+          "fn": 0
+        },
+        "accuracy": 1.0,
+        "accuracy_fraction": "100/100",
+        "precision": 1.0,
+        "precision_fraction": "50/50",
+        "recall": 1.0,
+        "recall_fraction": "50/50",
+        "specificity": 1.0,
+        "specificity_fraction": "50/50",
+        "f1_score": 1.0,
+        "balanced_accuracy": 1.0,
+        "false_positives": [],
+        "false_negatives": [],
+        "execution_errors": [],
+        "accuracy_95ci": [
+          0.963,
+          1.0
+        ],
+        "precision_95ci": [
+          0.9287,
+          1.0
+        ],
+        "recall_95ci": [
+          0.9287,
+          1.0
+        ],
+        "specificity_95ci": [
+          0.9287,
+          1.0
+        ],
+        "mean_fake_prob_real_faces": 0.0042,
+        "mean_fake_prob_fake_faces": 0.9984,
+        "sample_counts": {
+          "total_facial": 100,
+          "ground_truth_real": 50,
+          "ground_truth_fake": 50
+        },
+        "limitations": [
+          "Resolution and crop bias: tightly cropped centered 256x256 portraits",
+          "Generator homogeneity: synthetic faces originate solely from StyleGAN/StyleGAN2 architectures",
+          "Photographic source homogeneity: real faces originate exclusively from FFHQ Flickr captures"
+        ]
+      },
+      "scene_diagnostic_results": {
+        "test_scene_real_001": {
+          "sample_id": "test_scene_real_001",
+          "category": "authentic_scene",
+          "ground_truth": "REAL",
+          "prediction": "REAL",
+          "fake_probability": 0.197797,
+          "raw_logit": -1.400122,
+          "latency_ms": 922.16,
+          "correct": true
+        },
+        "test_scene_diffusion_001": {
+          "sample_id": "test_scene_diffusion_001",
+          "category": "diffusion_scene",
+          "ground_truth": "FAKE",
+          "prediction": "REAL",
+          "fake_probability": 0.342434,
+          "raw_logit": -0.652468,
+          "latency_ms": 439.08,
+          "correct": false
+        },
+        "test_scene_manip_001": {
+          "sample_id": "test_scene_manip_001",
+          "category": "manipulated_scene",
+          "ground_truth": "FAKE",
+          "prediction": "REAL",
+          "fake_probability": 0.049064,
+          "raw_logit": -2.964322,
+          "latency_ms": 472.64,
+          "correct": false
+        }
+      },
+      "rejection_control_results": {
+        "test_control_corr_001": {
+          "sample_id": "test_control_corr_001",
+          "category": "corrupted_file",
+          "ground_truth": "REJECTION_CONTROL",
+          "prediction": "ERROR",
+          "status": "ERROR",
+          "rejection_status": "REJECTED",
+          "error_message": "Invalid or corrupted image: cannot identify image file 'C:/Users/user/Desktop/multi model connection/benchmark/images/corrupted/corrupted_image.png'",
+          "rejection_successful": true
+        },
+        "test_control_unsupp_001": {
+          "sample_id": "test_control_unsupp_001",
+          "category": "unsupported_format",
+          "ground_truth": "REJECTION_CONTROL",
+          "prediction": "ERROR",
+          "status": "ERROR",
+          "rejection_status": "REJECTED",
+          "error_message": "Invalid or corrupted image: cannot identify image file 'C:/Users/user/Desktop/multi model connection/benchmark/images/corrupted/unsupported_doc.txt'",
+          "rejection_successful": true
+        }
+      },
+      "latency_summary_ms": {
+        "mean": 427.52,
+        "median": 413.47,
+        "min": 335.17,
+        "max": 1341.6
+      }
+    }
+  },
+  "pairwise_agreement": {
+    "chen2024_convnext_vs_univfd": {
+      "valid_sample_count": 103,
+      "concordant_samples": 75,
+      "discordant_samples": 28,
+      "concordance_rate": 0.7282,
+      "concordance_fraction": "75/103",
+      "agreement_breakdown": {
+        "both_fake": 2,
+        "both_real": 73,
+        "model1_fake_model2_real": 18,
+        "model1_real_model2_fake": 10
+      },
+      "cohen_kappa": -0.0241
+    },
+    "chen2024_convnext_vs_vit": {
+      "valid_sample_count": 103,
+      "concordant_samples": 45,
+      "discordant_samples": 58,
+      "concordance_rate": 0.4369,
+      "concordance_fraction": "45/103",
+      "agreement_breakdown": {
+        "both_fake": 6,
+        "both_real": 39,
+        "model1_fake_model2_real": 14,
+        "model1_real_model2_fake": 44
+      },
+      "cohen_kappa": -0.1466
+    },
+    "univfd_vs_vit": {
+      "valid_sample_count": 103,
+      "concordant_samples": 63,
+      "discordant_samples": 40,
+      "concordance_rate": 0.6117,
+      "concordance_fraction": "63/103",
+      "agreement_breakdown": {
+        "both_fake": 11,
+        "both_real": 52,
+        "model1_fake_model2_real": 1,
+        "model1_real_model2_fake": 39
+      },
+      "cohen_kappa": 0.2056
+    }
+  }
+}

@@ -1,0 +1,1648 @@
+{
+  "model": "DRCT ConvNeXt-Base (16_acc0.9993.pth)",
+  "transform": "create_val_transforms(size=224, is_crop=True)",
+  "total_samples": 200,
+  "accuracy": 0.77,
+  "specificity": 0.99,
+  "fake_recall": 0.55,
+  "midjourney_recall": 1.0,
+  "adm_recall": 0.1,
+  "roc_auc": 0.927,
+  "score_distributions": {
+    "real": {
+      "min": 7.4450995271035936e-06,
+      "max": 0.9843191504478455,
+      "mean": 0.014635047818051134,
+      "median": 4.232447645335924e-05,
+      "std": 0.10210276089134268,
+      "p25": 2.7020409561373526e-05,
+      "p75": 7.639378600288182e-05,
+      "p90": 0.00036651731352322134,
+      "p95": 0.017622930184006673
+    },
+    "midjourney": {
+      "min": 0.8206820487976074,
+      "max": 0.9994569420814514,
+      "mean": 0.9904415476322174,
+      "median": 0.9994383454322815,
+      "std": 0.03492550013241207,
+      "p25": 0.9994103610515594,
+      "p75": 0.9994460046291351,
+      "p90": 0.999450957775116,
+      "p95": 0.9994541525840759
+    },
+    "adm": {
+      "min": 1.4585814824386034e-05,
+      "max": 0.9467139840126038,
+      "mean": 0.16080121322327615,
+      "median": 0.020274197682738304,
+      "std": 0.2518419088834266,
+      "p25": 0.001294126530410722,
+      "p75": 0.2346075400710106,
+      "p90": 0.4301006764173511,
+      "p95": 0.789336451888084
+    }
+  },
+  "records": [
+    {
+      "sample_id": "phase7_ext_real_001",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.940860526403412e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_002",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 7.804021879564971e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_003",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 5.481577682076022e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_004",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.0716353396419436e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_005",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.9818321965867653e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_006",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 7.116515917005017e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_007",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 9.004009189084172e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_008",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.4993340048240498e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_009",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 6.752936315024272e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_010",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 7.672102947253734e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_011",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 7.628470484632999e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_012",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.898687646142207e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_013",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.945823846152052e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_014",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.0011665085330605507,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_015",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.5979082642588764e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_016",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 8.413143223151565e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_017",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.4152655239740852e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_018",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.1759249648312107e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_019",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.3647262171143666e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_020",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 9.559004683978856e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_021",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.233965228195302e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_022",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.3966818591579795e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_023",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.0818259145016782e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_024",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.02323842979967594,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_025",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 7.506537804147229e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_026",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.1748109651962295e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_027",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.5922794773359783e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_028",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.4384644348174334e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_029",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.791097722365521e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_030",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.9432430639863014e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_031",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 7.913856825325638e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_032",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.4421826563193463e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_033",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.806399010703899e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_034",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.7476646209834144e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_035",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 8.774866000749171e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_036",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.8204296288313344e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_037",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 5.239657184574753e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_038",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.25132641592063e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_039",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 6.749975000275299e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_040",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.0001623456773813814,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_041",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.010874236933887005,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_042",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 6.473810935858637e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_043",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 7.515626930398867e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_044",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.5966510040452704e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_045",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.00011588419874897227,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_046",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.00013624195707961917,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_047",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.29317739605903625,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_048",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.0996326636814047e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_049",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.484020635369234e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_050",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.04550106078386307,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_051",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.2725874664029106e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_052",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.734215948090423e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_053",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.1646475438028574e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_054",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.5651699615991674e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_055",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.711196743301116e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_056",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 5.44382055522874e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_057",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.8669468520092778e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_058",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.8243281374452636e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_059",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.00015537920990027487,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_060",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.00013917559408582747,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_061",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.3004486390855163e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_062",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.8679194909054786e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_063",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.309732710476965e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_064",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.382104114280082e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_065",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 6.609845149796456e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_066",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.0558112737489864e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_067",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.7722553820931353e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_068",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 5.786657493445091e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_069",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 7.59620379540138e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_070",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.576774906832725e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_071",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.07760857790708542,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_072",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.540708944958169e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_073",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 5.617564602289349e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_074",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.6337224224116653e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_075",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.9843191504478455,
+      "pred": "FAKE",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_real_076",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.5468910937197506e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_077",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.944357351632789e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_078",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.3156453607953154e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_079",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 6.38949713902548e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_080",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.0049432385712862015,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_081",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.2309300624765456e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_082",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.73306016222341e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_083",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.017327377572655678,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_084",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 9.984132702811621e-06,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_085",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 7.4450995271035936e-06,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_086",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.578429823392071e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_087",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.0003278010990470648,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_088",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.3005235561868176e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_089",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.8628566976985894e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_090",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 9.419187699677423e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_091",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 8.357418118976057e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_092",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 0.0007149632438085973,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_093",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 5.663138290401548e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_094",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 3.219193604309112e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_095",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 1.192084982903907e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_096",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 5.178300853003748e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_097",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.8242639018571936e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_098",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 2.5235307475668378e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_099",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 7.519935752497986e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_real_100",
+      "label": "REAL",
+      "generator": "none",
+      "fake_prob": 4.127804277231917e-05,
+      "pred": "REAL",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_001",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994367957115173,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_002",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994558691978455,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_003",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9993773102760315,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_004",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9715993404388428,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_005",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9993882179260254,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_006",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994457364082336,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_007",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994518160820007,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_008",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.8396560549736023,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_009",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994363188743591,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_010",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994390606880188,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_011",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994288086891174,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_012",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994463324546814,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_013",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994211196899414,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_014",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994435906410217,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_015",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994134902954102,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_016",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.8206820487976074,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_017",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994508624076843,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_018",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994462132453918,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_019",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994237422943115,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_020",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994569420814514,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_021",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994561076164246,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_022",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994410872459412,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_023",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994383454322815,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_024",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9986856579780579,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_025",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994383454322815,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_026",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9993565678596497,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_027",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994495511054993,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_028",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9171168208122253,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_029",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.999405026435852,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_030",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994460940361023,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_031",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994425177574158,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_032",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994038343429565,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_033",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994491934776306,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_034",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994403719902039,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_035",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994482398033142,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_036",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994389414787292,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_037",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994314312934875,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_038",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994311928749084,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_039",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994398951530457,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_040",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994394183158875,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_041",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9992963075637817,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_042",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994520545005798,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_043",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994447827339172,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_044",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994093179702759,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_045",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.999433696269989,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_046",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9993888139724731,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_047",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994471669197083,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_048",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994305968284607,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_049",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994438290596008,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_midjourney_050",
+      "label": "FAKE",
+      "generator": "midjourney",
+      "fake_prob": 0.9994325041770935,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_001",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.21606434881687164,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_002",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.006797937210649252,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_003",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.11991193890571594,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_004",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.03351269289851189,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_005",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 1.4679714695375878e-05,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_006",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.0034251657780259848,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_007",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 3.792113420786336e-05,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_008",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.7130411863327026,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_009",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.0012093454133719206,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_010",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.8517598509788513,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_011",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.001743657630868256,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_012",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.9467139840126038,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_013",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.0007292259251698852,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_014",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.01871255785226822,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_015",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 3.367987665114924e-05,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_016",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.048681169748306274,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_017",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.3442377746105194,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_018",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.37712690234184265,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_019",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.09082140028476715,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_020",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.0128974923864007,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_021",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.015579762868583202,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_022",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.29953470826148987,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_023",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.0008154012612067163,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_024",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.0015484698815271258,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_025",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.007137028966099024,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_026",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.016041666269302368,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_027",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 2.2542348233400844e-05,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_028",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.02183583751320839,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_029",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.9239702820777893,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_030",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 3.610830754041672e-05,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_031",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.0011509176110848784,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_032",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.3111328184604645,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_033",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.0023495014756917953,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_034",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 1.4585814824386034e-05,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_035",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.40474793314933777,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_036",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.15288370847702026,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_037",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.2287256121635437,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_038",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.25408414006233215,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_039",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.21752136945724487,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_040",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.23656818270683289,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_041",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.00228235125541687,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_042",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.07102362811565399,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_043",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.3295444846153259,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_044",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.00010824714991031215,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_045",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.0001525856350781396,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_046",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.058736152946949005,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_047",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.02275845594704151,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_048",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.6582753658294678,
+      "pred": "FAKE",
+      "correct": true
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_049",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 2.6488067305763252e-05,
+      "pred": "REAL",
+      "correct": false
+    },
+    {
+      "sample_id": "phase7_ext_fake_adm_050",
+      "label": "FAKE",
+      "generator": "adm",
+      "fake_prob": 0.013979412615299225,
+      "pred": "REAL",
+      "correct": false
+    }
+  ]
+}

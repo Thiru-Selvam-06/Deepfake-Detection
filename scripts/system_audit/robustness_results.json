@@ -1,0 +1,83 @@
+{
+  "clean": {
+    "Model A (ConvNeXt)": {
+      "accuracy": 0.55,
+      "real_recall": 0.55,
+      "fake_recall": 0.55
+    },
+    "Model B (UnivFD)": {
+      "accuracy": 0.55,
+      "real_recall": 0.55,
+      "fake_recall": 0.55
+    },
+    "Model C (ViT)": {
+      "accuracy": 1.0,
+      "real_recall": 1.0,
+      "fake_recall": 1.0
+    },
+    "Simple Average": {
+      "accuracy": 0.65,
+      "real_recall": 0.65,
+      "fake_recall": 0.65
+    },
+    "Central Analyzer (ViT-Priority)": {
+      "accuracy": 1.0,
+      "real_recall": 1.0,
+      "fake_recall": 1.0
+    }
+  },
+  "jpeg_75": {
+    "Model A (ConvNeXt)": {
+      "accuracy": 0.55,
+      "real_recall": 0.55,
+      "fake_recall": 0.55
+    },
+    "Model B (UnivFD)": {
+      "accuracy": 0.55,
+      "real_recall": 0.55,
+      "fake_recall": 0.55
+    },
+    "Model C (ViT)": {
+      "accuracy": 1.0,
+      "real_recall": 1.0,
+      "fake_recall": 1.0
+    },
+    "Simple Average": {
+      "accuracy": 0.65,
+      "real_recall": 0.65,
+      "fake_recall": 0.65
+    },
+    "Central Analyzer (ViT-Priority)": {
+      "accuracy": 1.0,
+      "real_recall": 1.0,
+      "fake_recall": 1.0
+    }
+  },
+  "downscale_half": {
+    "Model A (ConvNeXt)": {
+      "accuracy": 0.5,
+      "real_recall": 0.5,
+      "fake_recall": 0.5
+    },
+    "Model B (UnivFD)": {
+      "accuracy": 0.5,
+      "real_recall": 0.5,
+      "fake_recall": 0.5
+    },
+    "Model C (ViT)": {
+      "accuracy": 1.0,
+      "real_recall": 1.0,
+      "fake_recall": 1.0
+    },
+    "Simple Average": {
+      "accuracy": 0.6,
+      "real_recall": 0.6,
+      "fake_recall": 0.6
+    },
+    "Central Analyzer (ViT-Priority)": {
+      "accuracy": 1.0,
+      "real_recall": 1.0,
+      "fake_recall": 1.0
+    }
+  }
+}

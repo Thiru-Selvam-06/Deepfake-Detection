@@ -1,0 +1,682 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-30T15:12:53Z",
+    "evaluation_split": "development_val",
+    "split_composition": {
+      "total_samples": 50,
+      "authentic_real_faces": 25,
+      "stylegan2_fake_faces": 25,
+      "general_scenes": 0,
+      "rejection_controls": 0
+    },
+    "manifest_path": "benchmark/evaluation_manifest.csv",
+    "environment": {
+      "os": "Windows",
+      "os_release": "11",
+      "python_version": "3.13.13 (tags/v3.13.13:01104ce, Apr  7 2026, 19:25:48) [MSC v.1944 64 bit (AMD64)]",
+      "torch_version": "2.13.0+cpu",
+      "device": "cpu"
+    }
+  },
+  "individual_detectors": {
+    "chen2024_convnext": {
+      "total_samples": 50,
+      "classification_samples": 50,
+      "valid_count": 50,
+      "error_count": 0,
+      "confusion_matrix": {
+        "tp": 6,
+        "fp": 2,
+        "tn": 23,
+        "fn": 19
+      },
+      "accuracy": 0.58,
+      "accuracy_ci_95": [
+        0.4423,
+        0.7062
+      ],
+      "balanced_accuracy": 0.58,
+      "precision": 0.75,
+      "precision_ci_95": [
+        0.4093,
+        0.9285
+      ],
+      "recall": 0.24,
+      "recall_ci_95": [
+        0.115,
+        0.4343
+      ],
+      "specificity": 0.92,
+      "specificity_ci_95": [
+        0.7503,
+        0.9778
+      ],
+      "f1_score": 0.3636,
+      "false_positives": [
+        "val_face_real_007",
+        "val_face_real_025"
+      ],
+      "false_negatives": [
+        "val_face_fake_001",
+        "val_face_fake_002",
+        "val_face_fake_003",
+        "val_face_fake_004",
+        "val_face_fake_005",
+        "val_face_fake_008",
+        "val_face_fake_009",
+        "val_face_fake_012",
+        "val_face_fake_013",
+        "val_face_fake_014",
+        "val_face_fake_015",
+        "val_face_fake_016",
+        "val_face_fake_017",
+        "val_face_fake_018",
+        "val_face_fake_019",
+        "val_face_fake_022",
+        "val_face_fake_023",
+        "val_face_fake_024",
+        "val_face_fake_025"
+      ],
+      "errors": [],
+      "rejection_controls": {
+        "total_controls": 0,
+        "successfully_rejected": 0,
+        "rejection_rate": 1.0,
+        "control_sample_ids": []
+      }
+    },
+    "univfd": {
+      "total_samples": 50,
+      "classification_samples": 50,
+      "valid_count": 50,
+      "error_count": 0,
+      "confusion_matrix": {
+        "tp": 8,
+        "fp": 1,
+        "tn": 24,
+        "fn": 17
+      },
+      "accuracy": 0.64,
+      "accuracy_ci_95": [
+        0.5014,
+        0.7586
+      ],
+      "balanced_accuracy": 0.64,
+      "precision": 0.8889,
+      "precision_ci_95": [
+        0.565,
+        0.9801
+      ],
+      "recall": 0.32,
+      "recall_ci_95": [
+        0.1721,
+        0.5159
+      ],
+      "specificity": 0.96,
+      "specificity_ci_95": [
+        0.8046,
+        0.9929
+      ],
+      "f1_score": 0.4706,
+      "false_positives": [
+        "val_face_real_009"
+      ],
+      "false_negatives": [
+        "val_face_fake_001",
+        "val_face_fake_002",
+        "val_face_fake_005",
+        "val_face_fake_006",
+        "val_face_fake_007",
+        "val_face_fake_008",
+        "val_face_fake_009",
+        "val_face_fake_010",
+        "val_face_fake_011",
+        "val_face_fake_012",
+        "val_face_fake_013",
+        "val_face_fake_015",
+        "val_face_fake_016",
+        "val_face_fake_017",
+        "val_face_fake_023",
+        "val_face_fake_024",
+        "val_face_fake_025"
+      ],
+      "errors": [],
+      "rejection_controls": {
+        "total_controls": 0,
+        "successfully_rejected": 0,
+        "rejection_rate": 1.0,
+        "control_sample_ids": []
+      }
+    },
+    "vit": {
+      "total_samples": 50,
+      "classification_samples": 50,
+      "valid_count": 50,
+      "error_count": 0,
+      "confusion_matrix": {
+        "tp": 25,
+        "fp": 0,
+        "tn": 25,
+        "fn": 0
+      },
+      "accuracy": 1.0,
+      "accuracy_ci_95": [
+        0.9287,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "precision": 1.0,
+      "precision_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "specificity": 1.0,
+      "specificity_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "f1_score": 1.0,
+      "false_positives": [],
+      "false_negatives": [],
+      "errors": [],
+      "rejection_controls": {
+        "total_controls": 0,
+        "successfully_rejected": 0,
+        "rejection_rate": 1.0,
+        "control_sample_ids": []
+      }
+    }
+  },
+  "probability_comparability_analysis": {
+    "chen2024_convnext": {
+      "real_faces_p_fake": {
+        "count": 25,
+        "mean": 0.0983,
+        "std": 0.2559,
+        "min": 0.0,
+        "max": 0.9978,
+        "median": 0.0033
+      },
+      "fake_faces_p_fake": {
+        "count": 25,
+        "mean": 0.2929,
+        "std": 0.382,
+        "min": 0.0,
+        "max": 0.9984,
+        "median": 0.0757
+      },
+      "separation_margin": 0.1946,
+      "calibrated_on_faces": false
+    },
+    "univfd": {
+      "real_faces_p_fake": {
+        "count": 25,
+        "mean": 0.1173,
+        "std": 0.1844,
+        "min": 0.0,
+        "max": 0.7001,
+        "median": 0.0092
+      },
+      "fake_faces_p_fake": {
+        "count": 25,
+        "mean": 0.3484,
+        "std": 0.3394,
+        "min": 0.0,
+        "max": 0.9956,
+        "median": 0.2064
+      },
+      "separation_margin": 0.2311,
+      "calibrated_on_faces": false
+    },
+    "vit": {
+      "real_faces_p_fake": {
+        "count": 25,
+        "mean": 0.0026,
+        "std": 0.0053,
+        "min": 0.0005,
+        "max": 0.0272,
+        "median": 0.001
+      },
+      "fake_faces_p_fake": {
+        "count": 25,
+        "mean": 0.9987,
+        "std": 0.0012,
+        "min": 0.9943,
+        "max": 0.9996,
+        "median": 0.999
+      },
+      "separation_margin": 0.9961,
+      "calibrated_on_faces": true
+    }
+  },
+  "fusion_strategies": {
+    "vit_only": {
+      "total_samples": 50,
+      "classification_samples": 50,
+      "valid_count": 50,
+      "error_count": 0,
+      "confusion_matrix": {
+        "tp": 25,
+        "fp": 0,
+        "tn": 25,
+        "fn": 0
+      },
+      "accuracy": 1.0,
+      "accuracy_ci_95": [
+        0.9287,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "precision": 1.0,
+      "precision_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "specificity": 1.0,
+      "specificity_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "f1_score": 1.0,
+      "false_positives": [],
+      "false_negatives": [],
+      "errors": [],
+      "rejection_controls": {
+        "total_controls": 0,
+        "successfully_rejected": 0,
+        "rejection_rate": 1.0,
+        "control_sample_ids": []
+      }
+    },
+    "majority_vote": {
+      "total_samples": 50,
+      "classification_samples": 50,
+      "valid_count": 50,
+      "error_count": 0,
+      "confusion_matrix": {
+        "tp": 12,
+        "fp": 0,
+        "tn": 25,
+        "fn": 13
+      },
+      "accuracy": 0.74,
+      "accuracy_ci_95": [
+        0.6045,
+        0.8413
+      ],
+      "balanced_accuracy": 0.74,
+      "precision": 1.0,
+      "precision_ci_95": [
+        0.7575,
+        1.0
+      ],
+      "recall": 0.48,
+      "recall_ci_95": [
+        0.3003,
+        0.665
+      ],
+      "specificity": 1.0,
+      "specificity_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "f1_score": 0.6486,
+      "false_positives": [],
+      "false_negatives": [
+        "val_face_fake_001",
+        "val_face_fake_002",
+        "val_face_fake_005",
+        "val_face_fake_008",
+        "val_face_fake_009",
+        "val_face_fake_012",
+        "val_face_fake_013",
+        "val_face_fake_015",
+        "val_face_fake_016",
+        "val_face_fake_017",
+        "val_face_fake_023",
+        "val_face_fake_024",
+        "val_face_fake_025"
+      ],
+      "errors": [],
+      "rejection_controls": {
+        "total_controls": 0,
+        "successfully_rejected": 0,
+        "rejection_rate": 1.0,
+        "control_sample_ids": []
+      }
+    },
+    "mean_fake_probability": {
+      "total_samples": 50,
+      "classification_samples": 50,
+      "valid_count": 50,
+      "error_count": 0,
+      "confusion_matrix": {
+        "tp": 13,
+        "fp": 0,
+        "tn": 25,
+        "fn": 12
+      },
+      "accuracy": 0.76,
+      "accuracy_ci_95": [
+        0.6259,
+        0.857
+      ],
+      "balanced_accuracy": 0.76,
+      "precision": 1.0,
+      "precision_ci_95": [
+        0.7719,
+        1.0
+      ],
+      "recall": 0.52,
+      "recall_ci_95": [
+        0.335,
+        0.6997
+      ],
+      "specificity": 1.0,
+      "specificity_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "f1_score": 0.6842,
+      "false_positives": [],
+      "false_negatives": [
+        "val_face_fake_001",
+        "val_face_fake_002",
+        "val_face_fake_008",
+        "val_face_fake_009",
+        "val_face_fake_012",
+        "val_face_fake_013",
+        "val_face_fake_015",
+        "val_face_fake_016",
+        "val_face_fake_017",
+        "val_face_fake_023",
+        "val_face_fake_024",
+        "val_face_fake_025"
+      ],
+      "errors": [],
+      "rejection_controls": {
+        "total_controls": 0,
+        "successfully_rejected": 0,
+        "rejection_rate": 1.0,
+        "control_sample_ids": []
+      }
+    },
+    "vit_priority": {
+      "total_samples": 50,
+      "classification_samples": 50,
+      "valid_count": 50,
+      "error_count": 0,
+      "confusion_matrix": {
+        "tp": 25,
+        "fp": 0,
+        "tn": 25,
+        "fn": 0
+      },
+      "accuracy": 1.0,
+      "accuracy_ci_95": [
+        0.9287,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "precision": 1.0,
+      "precision_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "specificity": 1.0,
+      "specificity_ci_95": [
+        0.8668,
+        1.0
+      ],
+      "f1_score": 1.0,
+      "false_positives": [],
+      "false_negatives": [],
+      "errors": [],
+      "rejection_controls": {
+        "total_controls": 0,
+        "successfully_rejected": 0,
+        "rejection_rate": 1.0,
+        "control_sample_ids": []
+      }
+    }
+  },
+  "relative_to_vit_alone": {
+    "majority_vote": {
+      "delta_accuracy": -0.26,
+      "delta_balanced_accuracy": -0.26,
+      "delta_f1": -0.3514,
+      "count_improved": 0,
+      "count_regressed": 13,
+      "count_both_correct": 37,
+      "count_both_incorrect": 0,
+      "improved_samples": [],
+      "regressed_samples": [
+        {
+          "sample_id": "val_face_fake_001",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_002",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_005",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_008",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_009",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_012",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_013",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_015",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_016",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_017",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_023",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_024",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        },
+        {
+          "sample_id": "val_face_fake_025",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Majority vote REAL (2 REAL vs 1 FAKE)."
+        }
+      ]
+    },
+    "mean_fake_probability": {
+      "delta_accuracy": -0.24,
+      "delta_balanced_accuracy": -0.24,
+      "delta_f1": -0.3158,
+      "count_improved": 0,
+      "count_regressed": 12,
+      "count_both_correct": 38,
+      "count_both_incorrect": 0,
+      "improved_samples": [],
+      "regressed_samples": [
+        {
+          "sample_id": "val_face_fake_001",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.3540 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_002",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.3599 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_008",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.4272 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_009",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.4077 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_012",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.4396 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_013",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.3448 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_015",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.4910 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_016",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.4780 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_017",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.4732 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_023",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.3479 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_024",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.3423 < threshold 0.5000 -> REAL."
+        },
+        {
+          "sample_id": "val_face_fake_025",
+          "ground_truth": "FAKE",
+          "vit_prediction": "FAKE",
+          "strategy_prediction": "REAL",
+          "explanation": "Mean fake probability 0.3342 < threshold 0.5000 -> REAL."
+        }
+      ]
+    },
+    "vit_priority": {
+      "delta_accuracy": 0.0,
+      "delta_balanced_accuracy": 0.0,
+      "delta_f1": 0.0,
+      "count_improved": 0,
+      "count_regressed": 0,
+      "count_both_correct": 50,
+      "count_both_incorrect": 0,
+      "improved_samples": [],
+      "regressed_samples": []
+    }
+  },
+  "frozen_strategy_selection": {
+    "selected_strategy": "vit_priority",
+    "selection_rationale": "ViT achieves ceiling-level accuracy on facial crops. ViT-priority preserves ViT's 100.0% accuracy on development_val while providing explicit software contract fallback to secondary detectors (UnivFD, ConvNeXt) if ViT encounters execution failure. In contrast, unweighted majority voting and naive mean probability degrade performance by incorporating uncalibrated detectors.",
+    "reproducible_held_out_command": "python scripts/evaluate_phase5_fusion.py --eval-test --strategy vit_priority",
+    "held_out_test_status": "PENDING_APPROVAL (Not executed per Phase 5 protocol)",
+    "known_limitations": [
+      "Validation split contains exclusively cropped facial images (25 FFHQ Real, 25 StyleGAN Fake).",
+      "Results do not prove generalization to modern diffusion scenes, face swaps, or localized splicing.",
+      "Held-out test set was previously observed in Phase 4 baseline evaluation, so it is not a blind test.",
+      "Raw probabilities across detectors are not calibrated to a shared distribution."
+    ]
+  }
+}

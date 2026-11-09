@@ -42,17 +42,20 @@ class UnivFDAdapter:
     """
     Adapter for UniversalFakeDetect (CLIP:ViT-L/14 + Linear Probe).
     
-    Adheres strictly to the existing pipeline:
+    Adheres strictly to the official validate.py pipeline (Ojha et al., CVPR 2023):
       - Architecture: CLIP:ViT-L/14
       - Weights: UniversalFakeDetect/pretrained_weights/fc_weights.pth
-      - Preprocessing: Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(clip)
+      - Preprocessing: CenterCrop(224) at native resolution -> ToTensor() -> Normalize(clip stats)
       - Decision Threshold: 0.50 (logit 0.00)
       - Label Mapping: 0 = REAL, 1 = FAKE
     """
 
     DETECTOR_NAME = "UniversalFakeDetect"
     MODEL_NAME = "CLIP:ViT-L/14 + fc_weights.pth"
-    PREPROCESSING_NAME = "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(clip)"
+    PREPROCESSING_NAME = (
+        "CenterCrop(224) [native resolution, validate.py] -> ToTensor() -> "
+        "Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])"
+    )
     DECISION_THRESHOLD = 0.50
     LIMITATION_WARNING = (
         "Identifies learned patterns associated with synthetic or manipulated images. "
@@ -71,13 +74,14 @@ class UnivFDAdapter:
             self.load_model()
 
     def load_model(self) -> bool:
-        """Loads model backbone and classifier weights once if not already initialized."""
+        """Loads model backbone, classifier weights, and official validate.py preprocessing."""
         if self.model is not None:
             return True
 
         start_t = time.perf_counter()
         try:
             from models import get_model
+            from torchvision import transforms
 
             # Determine compute device
             if self.device_requested is not None:
@@ -100,7 +104,14 @@ class UnivFDAdapter:
             model.eval()
 
             self.model = model
-            self.preprocess = model.preprocess
+            # Official validate.py evaluation transform: direct native CenterCrop(224), no resize
+            clip_mean = [0.48145466, 0.4578275, 0.40821073]
+            clip_std = [0.26862954, 0.26130258, 0.27577711]
+            self.preprocess = transforms.Compose([
+                transforms.CenterCrop(224),
+                transforms.ToTensor(),
+                transforms.Normalize(mean=clip_mean, std=clip_std),
+            ])
             self.load_time_sec = time.perf_counter() - start_t
             return True
 
@@ -109,6 +120,16 @@ class UnivFDAdapter:
             self.model = None
             self.preprocess = None
             return False
+
+    def unload_model(self) -> None:
+        """
+        Explicitly releases the CLIP backbone model and preprocess transform
+        to free system and GPU memory.
+        """
+        self.model = None
+        self.preprocess = None
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
 
     def predict(self, image_input: Any) -> DetectorResult:
         """

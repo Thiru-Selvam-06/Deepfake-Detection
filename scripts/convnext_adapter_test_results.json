@@ -1,0 +1,173 @@
+{
+  "metadata": {
+    "test_type": "operational_diagnostics",
+    "model": "chen2024_convnext",
+    "accuracy_evaluation": false,
+    "test_images": {
+      "real": "C:\\Users\\user\\Desktop\\multi model connection\\benchmark\\test_images\\real.jpg",
+      "ai_generated": "C:\\Users\\user\\Desktop\\multi model connection\\benchmark\\test_images\\ai_generated.jpg",
+      "manipulated": "C:\\Users\\user\\Desktop\\multi model connection\\benchmark\\test_images\\manipulated.jpg"
+    }
+  },
+  "checks": {
+    "test_11_lazy_loading": {
+      "status": "PASS",
+      "detail": "Model is not initialized before first prediction."
+    },
+    "test_12_detector_isolation": {
+      "status": "PASS",
+      "detail": "No UnivFD/ViT instances found at this point."
+    },
+    "test_01_valid_real_image": {
+      "status": "PASS",
+      "detail": "Prediction=REAL, fake_probability=0.004387, real_probability=0.995613, device=cpu, latency_ms=13663.31"
+    },
+    "test_02_valid_ai_image": {
+      "status": "PASS",
+      "detail": "Prediction=REAL, fake_probability=0.073853, real_probability=0.926147, device=cpu, latency_ms=733.2"
+    },
+    "test_03_valid_manipulated_image": {
+      "status": "PASS",
+      "detail": "Prediction=REAL, fake_probability=0.142673, real_probability=0.857327, device=cpu, latency_ms=486.38"
+    },
+    "test_model_loaded_after_prediction": {
+      "status": "PASS",
+      "detail": "Model is initialized."
+    },
+    "test_04_corrupted_image": {
+      "status": "PASS",
+      "detail": "Prediction=ERROR, error=Invalid or corrupted image: cannot identify image file 'C:\\\\Users\\\\user\\\\Desktop\\\\multi model connection\\\\benchmark\\\\test_images\\\\corrupted_image.png'"
+    },
+    "test_05_unsupported_file": {
+      "status": "PASS",
+      "detail": "Prediction=ERROR, error=Invalid or corrupted image: cannot identify image file 'C:\\\\Users\\\\user\\\\Desktop\\\\multi model connection\\\\benchmark\\\\test_images\\\\_temp_convnext_unsupported.txt'"
+    },
+    "test_06_missing_path": {
+      "status": "PASS",
+      "detail": "Prediction=ERROR, error=Image file does not exist: C:\\Users\\user\\Desktop\\multi model connection\\models\\non_existent_image_12345.png"
+    },
+    "test_07_none_input": {
+      "status": "PASS",
+      "detail": "Prediction=ERROR, error=No image provided (input was None)."
+    },
+    "test_08_probability_bounds": {
+      "status": "PASS",
+      "detail": "All valid-result probabilities are within [0, 1]."
+    },
+    "test_09_probability_sum": {
+      "status": "PASS",
+      "detail": "Each valid result's probabilities sum to approximately 1."
+    },
+    "test_10_confidence_alignment": {
+      "status": "PASS",
+      "detail": "Confidence matches the predicted class probability."
+    }
+  },
+  "inferences": {
+    "real": {
+      "detector_name": "Chen2024ConvNeXtDetector",
+      "model_name": "chen2024_convnext (ConvNeXt-Base)",
+      "prediction": "REAL",
+      "fake_probability": 0.004387,
+      "real_probability": 0.995613,
+      "raw_logit": -5.424777,
+      "confidence": 0.995613,
+      "threshold": 0.5,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])",
+      "inference_time_ms": 13663.31,
+      "error": null,
+      "warning": "ConvNeXt detector evaluated on synthetic/generator artifacts from RAID benchmark. Does not guarantee authenticity."
+    },
+    "ai_generated": {
+      "detector_name": "Chen2024ConvNeXtDetector",
+      "model_name": "chen2024_convnext (ConvNeXt-Base)",
+      "prediction": "REAL",
+      "fake_probability": 0.073853,
+      "real_probability": 0.926147,
+      "raw_logit": -2.528955,
+      "confidence": 0.926147,
+      "threshold": 0.5,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])",
+      "inference_time_ms": 733.2,
+      "error": null,
+      "warning": "ConvNeXt detector evaluated on synthetic/generator artifacts from RAID benchmark. Does not guarantee authenticity."
+    },
+    "manipulated": {
+      "detector_name": "Chen2024ConvNeXtDetector",
+      "model_name": "chen2024_convnext (ConvNeXt-Base)",
+      "prediction": "REAL",
+      "fake_probability": 0.142673,
+      "real_probability": 0.857327,
+      "raw_logit": -1.793265,
+      "confidence": 0.857327,
+      "threshold": 0.5,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])",
+      "inference_time_ms": 486.38,
+      "error": null,
+      "warning": "ConvNeXt detector evaluated on synthetic/generator artifacts from RAID benchmark. Does not guarantee authenticity."
+    },
+    "corrupted": {
+      "detector_name": "Chen2024ConvNeXtDetector",
+      "model_name": "chen2024_convnext (ConvNeXt-Base)",
+      "prediction": "ERROR",
+      "fake_probability": null,
+      "real_probability": null,
+      "raw_logit": null,
+      "confidence": null,
+      "threshold": null,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])",
+      "inference_time_ms": null,
+      "error": "Invalid or corrupted image: cannot identify image file 'C:\\\\Users\\\\user\\\\Desktop\\\\multi model connection\\\\benchmark\\\\test_images\\\\corrupted_image.png'",
+      "warning": "ConvNeXt detector evaluated on synthetic/generator artifacts from RAID benchmark. Does not guarantee authenticity."
+    },
+    "unsupported_text": {
+      "detector_name": "Chen2024ConvNeXtDetector",
+      "model_name": "chen2024_convnext (ConvNeXt-Base)",
+      "prediction": "ERROR",
+      "fake_probability": null,
+      "real_probability": null,
+      "raw_logit": null,
+      "confidence": null,
+      "threshold": null,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])",
+      "inference_time_ms": null,
+      "error": "Invalid or corrupted image: cannot identify image file 'C:\\\\Users\\\\user\\\\Desktop\\\\multi model connection\\\\benchmark\\\\test_images\\\\_temp_convnext_unsupported.txt'",
+      "warning": "ConvNeXt detector evaluated on synthetic/generator artifacts from RAID benchmark. Does not guarantee authenticity."
+    },
+    "missing_path": {
+      "detector_name": "Chen2024ConvNeXtDetector",
+      "model_name": "chen2024_convnext (ConvNeXt-Base)",
+      "prediction": "ERROR",
+      "fake_probability": null,
+      "real_probability": null,
+      "raw_logit": null,
+      "confidence": null,
+      "threshold": null,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])",
+      "inference_time_ms": null,
+      "error": "Image file does not exist: C:\\Users\\user\\Desktop\\multi model connection\\models\\non_existent_image_12345.png",
+      "warning": "ConvNeXt detector evaluated on synthetic/generator artifacts from RAID benchmark. Does not guarantee authenticity."
+    },
+    "none_input": {
+      "detector_name": "Chen2024ConvNeXtDetector",
+      "model_name": "chen2024_convnext (ConvNeXt-Base)",
+      "prediction": "ERROR",
+      "fake_probability": null,
+      "real_probability": null,
+      "raw_logit": null,
+      "confidence": null,
+      "threshold": null,
+      "device": "cpu",
+      "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])",
+      "inference_time_ms": null,
+      "error": "No image provided (input was None).",
+      "warning": "ConvNeXt detector evaluated on synthetic/generator artifacts from RAID benchmark. Does not guarantee authenticity."
+    }
+  }
+}

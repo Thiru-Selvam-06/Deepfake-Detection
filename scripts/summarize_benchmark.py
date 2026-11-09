@@ -1,7 +1,7 @@
 """
 Benchmark Summary Generator
-Parses detector_comparison.json and prints/saves an objective, comparative summary.
-Reports agreements and disagreements without combining predictions.
+Dynamically parses detector_comparison.json and prints an objective, comparative summary
+for all evaluated detectors without combining predictions.
 """
 
 import os
@@ -20,50 +20,70 @@ def summarize():
     with open(RESULTS_FILE, "r", encoding="utf-8") as f:
         records = json.load(f)
 
-    total = len(records)
-    agreements = [r for r in records if r["agreement_status"] == "AGREE"]
-    disagreements = [r for r in records if r["agreement_status"] == "DISAGREE"]
+    if not records:
+        print("No benchmark records found.")
+        return
 
-    print("=" * 90)
-    print("MULTI-MODEL DETECTOR BENCHMARK SUMMARY")
-    print("Detectors evaluated independently: UniversalFakeDetect vs. ViT (dima806)")
-    print("=" * 90)
-    print(f"{'ID':<10} | {'Category':<14} | {'Label':<12} | {'UnivFD (Conf)':<18} | {'ViT (Conf)':<18} | {'Status'}")
-    print("-" * 90)
+    total = len(records)
+    first_record = records[0]
+
+    # Discover detectors dynamically from record keys (ending with '_prediction')
+    detector_keys = [
+        k[:-11] for k in first_record.keys()
+        if k.endswith("_prediction")
+    ]
+
+    agreements = [r for r in records if r.get("agreement_status") == "AGREE"]
+    disagreements = [r for r in records if r.get("agreement_status") == "DISAGREE"]
+
+    col_width = 18
+    header_detectors = " | ".join(f"{d.upper() + ' (Conf)':<{col_width}}" for d in detector_keys)
+    table_header = f"{'ID':<10} | {'Category':<14} | {'Label':<12} | {header_detectors} | {'Status'}"
+    separator = "-" * len(table_header)
+
+    print("=" * len(table_header))
+    print(f"MULTI-MODEL DETECTOR BENCHMARK SUMMARY ({len(detector_keys)} Detectors Registered)")
+    print(f"Detectors evaluated independently: {', '.join(detector_keys)}")
+    print("Policy: Independent evaluation. Predictions NOT combined into ensemble.")
+    print("=" * len(table_header))
+    print(table_header)
+    print(separator)
 
     for r in records:
         entry_id = r["id"]
         cat = r["category"]
         lbl = r["explicit_label"]
 
-        u_pred = r["univfd_prediction"]
-        u_conf = f"{r['univfd_confidence']*100:.1f}%" if r["univfd_confidence"] is not None else "N/A"
-        u_str = f"{u_pred} ({u_conf})"
+        det_cols = []
+        for d in detector_keys:
+            pred = r.get(f"{d}_prediction", "N/A")
+            conf_val = r.get(f"{d}_confidence")
+            conf_str = f"{conf_val * 100:.1f}%" if conf_val is not None else "N/A"
+            det_cols.append(f"{pred} ({conf_str}):<{col_width}")
+            # Format nicely
+            det_cols[-1] = f"{pred} ({conf_str})"[:col_width].ljust(col_width)
 
-        v_pred = r["vit_prediction"]
-        v_conf = f"{r['vit_confidence']*100:.1f}%" if r["vit_confidence"] is not None else "N/A"
-        v_str = f"{v_pred} ({v_conf})"
+        det_str = " | ".join(det_cols)
+        status = r.get("agreement_status", "UNKNOWN")
+        print(f"{entry_id:<10} | {cat:<14} | {lbl:<12} | {det_str} | {status}")
 
-        status = r["agreement_status"]
-        print(f"{entry_id:<10} | {cat:<14} | {lbl:<12} | {u_str:<18} | {v_str:<18} | {status}")
-
-    print("=" * 90)
+    print("=" * len(table_header))
     print(f"TOTAL SAMPLES:          {total}")
     print(f"IDENTICAL PREDICTIONS:  {len(agreements)} / {total} ({len(agreements)/total*100:.1f}%)")
     print(f"DISAGREEMENTS:          {len(disagreements)} / {total} ({len(disagreements)/total*100:.1f}%)")
-    print("=" * 90)
+    print("=" * len(table_header))
 
     if disagreements:
         print("\nDETAILED DISAGREEMENTS (Predictions NOT combined):")
         for d in disagreements:
             print(f"  Sample ID: {d['id']} ({d['filename']})")
             print(f"    Explicit Label:    {d['explicit_label']}")
-            print(f"    UnivFD Output:     {d['univfd_prediction']} (fake_prob={d['univfd_fake_prob']}, logit={d['univfd_logit']})")
-            print(f"    ViT Output:        {d['vit_prediction']} (fake_prob={d['vit_fake_prob']}, logit={d['vit_logit']})")
-            print(f"    Note: Each detector operated in total isolation; predictions are not combined.\n")
+            for det in detector_keys:
+                print(f"    {det.upper()} Output:     {d.get(f'{det}_prediction')} (fake_prob={d.get(f'{det}_fake_prob')}, logit={d.get(f'{det}_logit')})")
+            print("    Note: Each detector operated in total isolation; predictions are not combined.\n")
     else:
-        print("\nNo disagreements observed across tested samples.")
-        print("Note: Both detectors concurred on all samples tested (including error rejections and predictions).")
+        print("\nObservational Concurrence: Both detectors produced identical discrete predictions across all 5 samples.")
+        print("Note: Discrete agreement at 0.50 threshold does NOT indicate identical feature representations or accuracy.")
 
 
 if __name__ == "__main__":

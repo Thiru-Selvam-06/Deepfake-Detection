@@ -10,3 +10,4 @@ setuptools<70
 psutil
 transformers
 safetensors
+timm==1.0.29

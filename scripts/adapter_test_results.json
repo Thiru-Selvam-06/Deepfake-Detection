@@ -18,7 +18,7 @@
       "threshold": 0.5,
       "device": "cpu",
       "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(clip)",
-      "inference_time_ms": 19484.99,
+      "inference_time_ms": 57685.15,
       "error": null,
       "warning": "Identifies learned patterns associated with synthetic or manipulated images. Does not guarantee image authenticity."
     }
@@ -42,7 +42,7 @@
       "threshold": 0.5,
       "device": "cpu",
       "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(clip)",
-      "inference_time_ms": 618.7,
+      "inference_time_ms": 675.72,
       "error": null,
       "warning": "Identifies learned patterns associated with synthetic or manipulated images. Does not guarantee image authenticity."
     }
@@ -66,7 +66,7 @@
       "threshold": 0.5,
       "device": "cpu",
       "preprocessing": "Resize(224, bicubic) -> CenterCrop(224) -> ToTensor() -> Normalize(clip)",
-      "inference_time_ms": 614.01,
+      "inference_time_ms": 621.65,
       "error": null,
       "warning": "Identifies learned patterns associated with synthetic or manipulated images. Does not guarantee image authenticity."
     }

@@ -26,8 +26,11 @@ from src.detector_schema import (
 )
 from src.univfd_adapter import UnivFDAdapter
 from src.vit_adapter import ViTAdapter
+from src.convnext_adapter import ConvNeXtDetectorAdapter
 
-ASSET_DIR = r"C:\Users\user\.gemini\antigravity-ide\brain\3b54ff09-c09f-4fe6-9276-f4cca9fbc6d7"
+# Resolve asset paths within the project repository
+ASSET_DIR = os.path.join(BASE_DIR, "benchmark", "test_images")
+FALLBACK_DIR = os.path.join(BASE_DIR, "benchmark", "images")
 
 def assert_contract(result: DetectorResult, test_name: str, expect_error: bool = False):
     """Rigorous contract checks against DetectorResult."""
@@ -79,14 +82,23 @@ def main():
 
     univfd = UnivFDAdapter(lazy_load=True)
     vit = ViTAdapter(lazy_load=True)
+    convnext = ConvNeXtDetectorAdapter(lazy_load=True)
 
     adapters = [
         ("UnivFDAdapter", univfd),
-        ("ViTAdapter", vit)
+        ("ViTAdapter", vit),
+        ("ConvNeXtDetectorAdapter", convnext),
     ]
 
-    real_img = os.path.join(ASSET_DIR, "scratch", "real_phone_photo.png")
-    corrupt_img = os.path.join(ASSET_DIR, "scratch", "corrupted_image.png")
+    # Locate test fixtures
+    real_img = os.path.join(ASSET_DIR, "real.jpg")
+    if not os.path.isfile(real_img):
+        real_img = os.path.join(FALLBACK_DIR, "real", "real_phone_photo.png")
+
+    corrupt_img = os.path.join(ASSET_DIR, "corrupted_image.png")
+    if not os.path.isfile(corrupt_img):
+        corrupt_img = os.path.join(FALLBACK_DIR, "corrupted", "corrupted_image.png")
+
     nonexistent = os.path.join(ASSET_DIR, "nonexistent_image_123.jpg")
 
     contract_results = []
@@ -114,11 +126,18 @@ def main():
         assert_contract(res_none, f"{name} - None Input", expect_error=True)
         print(f"  [PASS] None input rejection: pred={res_none.prediction}")
 
+        # 5. Unload Model Verification
+        if hasattr(adapter, "unload_model"):
+            adapter.unload_model()
+            assert adapter.model is None, f"{name}: unload_model() did not set self.model to None"
+            print(f"  [PASS] unload_model() verified: weights successfully released")
+
         contract_results.append({
             "adapter": name,
             "contract_status": "COMPLIANT",
             "schema_verified": True,
             "error_handling_verified": True,
+            "unload_model_verified": hasattr(adapter, "unload_model"),
         })
         print()
 
